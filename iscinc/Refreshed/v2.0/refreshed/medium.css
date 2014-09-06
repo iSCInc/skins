@@ -1,0 +1,67 @@
+/* anything between 601px and 1000px - tablets, big phones in landscape, very small laptops */
+
+#leftbar {
+	left: 0 !important;
+}
+
+#rightbar {
+	width: 12em;
+	right: -12em;
+	background: rgb(25, 25, 112);
+	background-color: rgba(25, 25, 112, 0.8);
+}
+
+#rightbar .shower {
+	width: 48px;
+}
+
+#contentwrapper {
+	margin-left: 12em;
+	margin-right: 1em;
+}
+
+#footer {
+	margin-left: 14em;
+	margin-right: 2em;
+}
+
+#siteinfo .headermenu,
+#siteinfo > a,
+#siteinfo #siteinfo-main {
+	margin-left: -webkit-calc(50% - 1em);
+	margin-left: -moz-calc(50% - 1em);
+	margin-left: calc(50% - 1em);
+}
+
+#smalltoolboxwrapper {
+	display: none;
+}
+
+#maintitle h1 {
+	white-space: nowrap;
+	font-size: 2.25em;
+	overflow-x: scroll;
+}
+.scrollshadow {
+	background:
+		-webkit-linear-gradient(90deg, white 20%, rgba(255,255,255,0)),
+		-webkit-linear-gradient(270deg, white 20%, rgba(255,255,255,0)) 100% 0,
+		-webkit-linear-gradient(90deg, #e3e3e3 10%, rgba(255,255,255,0)),
+		-webkit-linear-gradient(270deg, #e3e3e3 10%, rgba(255,255,255,0)) 100% 0;
+	background:
+		linear-gradient(90deg, white 20%, rgba(255,255,255,0)),
+		linear-gradient(270deg, white 20%, rgba(255,255,255,0)) 100% 0,
+		linear-gradient(90deg, #e3e3e3 10%, rgba(255,255,255,0)),
+		linear-gradient(270deg, #e3e3e3 10%, rgba(255,255,255,0)) 100% 0;
+	background-repeat: no-repeat;
+	background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
+	background-attachment: local, local, scroll, scroll;
+}
+#siteSub {
+	display: none !important;
+}
+
+/* Hide ads on mobile until mobile ads are implemented */
+#advert {
+	display: none;
+}

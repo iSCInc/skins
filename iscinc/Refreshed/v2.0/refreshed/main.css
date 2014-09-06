@@ -1,0 +1,755 @@
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Lato Light'), local('Lato-Light'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Lato Bold'), local('Lato-Bold'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Lato body';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Lato Regular'), local('Lato-Regular'), url(http://themes.googleusercontent.com/static/fonts/lato/v6/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff');
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	margin: 0;
+	background-color: #194a8d;
+}
+
+#header {
+	background-color: #103ca2;
+	background-image: -moz-linear-gradient(left, #040f28 0, #103ca2 50%, #040f28 100%);
+	background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(0, #040f28), color-stop(50%, #103ca2), color-stop(100%, #040f28));
+	background-image: -o-linear-gradient(left, #040f28 0, #103ca2 50%, #040f28 100%);
+	/* IE5.5-IE7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#040f28', endColorstr='#103ca2', GradientType=1);
+	/* IE8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=1,StartColorStr=#040f28,EndColorStr=#103ca2)";
+	/* IE9+ */
+	background-image: -ms-linear-gradient(left, #040f28 0, #103ca2 50%, #040f28 100%);
+	background-image: linear-gradient(to left, #040f28 0, #103ca2 50%, #040f28 100%);
+	-webkit-font-smoothing: antialiased;
+	width: 100%;
+	height: 3em;
+	z-index: 3;
+	position: fixed;
+}
+
+#maintitle h1 {
+	font-size: 32pt;
+	font-family: "Lato Body", sans-serif;
+	padding-top: 0.2em;
+	padding-left: 0.5em;
+	margin-bottom: 0.3em;
+	padding-bottom: .05em;
+}
+.scrollshadow {
+	background: none;
+}
+#maintitlemessages {
+	padding-left: 1.5em;
+}
+#siteSub {
+	font-size: 84%;
+	padding-bottom: .25em;
+}
+#contentSub {
+	margin: 0;
+	margin-bottom: .25em;
+}
+
+#back-to-subject {
+	display: none;
+}
+
+#smalltoolboxwrapper {
+	display: none;
+}
+
+#site-notice {
+	width: 100%;
+	text-align: center;
+}
+
+#newtalk {
+	margin-left: 2em;
+}
+
+#contentwrapper {
+	min-height: 100%;
+	position: relative;
+	top: 3em;
+	background-color: white;
+	z-index: 2;
+	font-family: sans-serif;
+	overflow: auto;
+}
+
+#content {
+	padding: 0em 1em;
+	font-size: 0.9em;
+	word-wrap: break-word;
+}
+
+#leftbar, #rightbar {
+	width: 12em;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	color: white;
+	z-index: 3;
+}
+
+/*
+ * Hide the list bullet icons. This is not terribly useful by default, but there
+ * are extensions which can add entire portlets to the sidebar, and said portlets
+ * might be using the <ul> HTML tag...
+ */
+#rightbar li, #leftbar li {
+	list-style-type: none;
+	margin: 0;
+}
+
+#rightbar ul, #leftbar ul {
+	margin: 0;
+	padding: 0;
+}
+
+#rightbar-top {
+	overflow-y: auto;
+	width: 100%;
+	height: webkit-calc( 100% - 3.5em );
+	height: moz-calc( 100% - 3.5em );
+	height: calc( 100% - 3.5em );
+	left: 0px;
+}
+
+#leftbar-top, #rightbar-top {
+	position: absolute;
+	top: 3em;
+	padding-top: 8px !important;
+}
+
+#leftbar-bottom {
+	position: absolute;
+	bottom: 1em;
+	border-right: 1px solid white;
+	width: 100%;
+	right: -1px;
+}
+
+#leftbar-top {
+	right: 0px;
+}
+
+#leftbar-main a, #rightbar-main a {
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+
+#leftbar-main a {
+	padding-left: 10px;
+	text-align: right;
+	margin-right: 5px;
+	direction: ltr; /* ensure direction is correct, as ToC changes it */
+}
+
+#rightbar-main a {
+	text-align: left;
+	margin-left: 5px;
+}
+
+#rightbar .main {
+	padding-left: 10px;
+	display: block;
+	margin-top: 0.5em;
+}
+
+#rightbar .main:first-of-type {
+	margin-top: 0em;
+}
+
+#rightbar .sub {
+	padding-left: 20px;
+}
+
+#leftbar-main a:hover, #rightbar-main a:hover {
+	color: #CCC;
+	cursor: pointer;
+}
+
+#leftbar-main a:hover {
+	border-right: 5px solid #CCC;
+	margin-right: 0;
+}
+
+#rightbar-main a:hover {
+	border-left: 5px solid #CCC;
+	margin-left: 0;
+}
+
+#leftbar-top li, #rightbar-top li {
+	text-transform: lowercase;
+}
+
+#leftbar-top a {
+	padding-right: 10px;
+}
+
+/* Don't apply text-transform to the page name in the left-hand sidebar */
+#leftbar-top > li:first-of-type {
+	text-transform: none;
+}
+
+/* At least Internet Explorer 8 doesn't understand first-of-type... */
+ul#leftbar-top li a[id ^="ca-nstab"] {
+	text-transform: none;
+}
+
+#leftbar-top > li:nth-of-type(3) > a {
+	margin-top: 0.5em;
+}
+
+#leftbar-top a.selected,
+#leftbar-top .selected a {
+	border-right: 5px solid white;
+	margin-right: 0;
+}
+
+#leftbar-top a.new,
+#leftbar-top .new a {
+	color: #fdad9d;
+	border-color: #fdad9d;
+}
+
+#leftbar-top a.new:hover,
+#leftbar-top .new a:hover {
+	color: #f47d64;
+	border-color: #f47d64;
+}
+
+#leftbar-top a.new.selected,
+#leftbar-top .new.selected a {
+	color: #fdad9d;
+	border-color: #fdad9d;
+}
+
+#toolbox, #languages {
+	right: 0;
+	z-index: 3;
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	width: 12em;
+}
+
+.shower {
+	position: absolute;
+	height: 3em;
+	cursor: pointer;
+}
+
+#rightbar .shower {
+	right: 12.5em;
+	width: 48px;
+	height: 48px;
+	background: url("images/icon-rightbar.png") top left no-repeat;
+	background-size: 48px 48px;
+}
+
+#refreshed-toc {
+	position: relative;
+}
+
+#toc-box {
+	width: 5px;
+	background-color: white;
+	height: 28px;
+	position: absolute;
+	right: 0;
+}
+
+#refreshed-toc a:only-of-type {
+	height: 28px;
+}
+
+#leftbar-bottom a {
+	padding-right: 10px;
+	padding-top: 0.15em;
+	padding-bottom: 0.15em;
+}
+
+a.toclevel-2 {
+	padding-right: 20px !important;
+}
+
+a.toclevel-3 {
+	padding-right: 30px !important;
+}
+
+a.toclevel-4 {
+	padding-right: 40px !important;
+}
+
+a.toclevel-5 {
+	padding-right: 50px !important;
+}
+
+a.toclevel-6 {
+	padding-right: 60px !important;
+}
+
+.toc, #toc { /* hide inline toc if it has somehow scraped in. */
+	display: none;
+}
+
+#userinfo {
+	position: relative;
+	float: left;
+}
+
+#userinfo > a {
+	display: block;
+	padding: 0.5em;
+	height: 2em;
+	text-decoration: none;
+	min-width: 11em; /* 11em - 12em minus 1/2em padding on each side */
+	position: relative;
+	white-space: nowrap;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+}
+
+#userinfo > a:hover {
+	background-color: midnightblue;
+	color: #CCC;
+}
+
+#userinfo .avatar-none {
+	display: none;
+}
+
+#userinfo > a span {
+	display: block;
+	margin-top: 0.1em;
+	font-size: 15pt;
+	color: white !important;
+	padding-right: 10px;
+	margin-left: 3.5em;
+}
+
+#username-avatar-none {
+	margin-left: 1.75em !important;
+}
+
+#userinfo .arrow {
+	position: absolute;
+	left: 1em;
+	top: 1.2em;
+	vertical-align: text-bottom;
+}
+
+#toolbox-link {
+	margin-top: 0.5em;
+}
+
+#toolbox-link .arrow, #languages-link .arrow {
+	vertical-align: 2px;
+}
+
+#userinfo .arrow, #toolbox-link .arrow, #languages-link .arrow {
+	-webkit-transition: -webkit-transform 0.5s; /* Safari */
+	-moz-transition: -moz-transform 0.5s; /* Firefox */
+	-ms-transition: -ms-trasform 0.5s; /* IE */
+	transition: transform 0.5s;
+
+	-webkit-transform: rotateZ(0deg); /* Safari */
+	-moz-transform: rotateZ(0deg); /* Firefox */
+	-ms-transform: rotateZ(0deg); /* IE */
+	transform: rotateZ(0deg);
+}
+
+#userinfo .arrow.rotate, #toolbox-link .arrow.rotate, #languages-link .arrow.rotate {
+	-webkit-transform: rotateZ(-180deg); /* Safari */
+	-moz-transform: rotateZ(-180deg); /* Firefox */
+	-ms-transform: rotateZ(-180deg); /* IE */
+	transform: rotateZ(-180deg);
+}
+
+#userinfo .avatar {
+	position: absolute;
+	left: 2.5em;
+	width: 30px;
+}
+
+.no-show {
+	display: none;
+}
+
+.headermenu {
+	padding: 0 0.2em 0.2em 0.2em;
+	margin: 0;
+	z-index: 4;
+}
+
+#userinfo .headermenu {
+	background-color: #191970;
+	background-color: rgba(25, 25, 112, 0.8);
+}
+
+#siteinfo .headermenu {
+	background-color: #000;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.headermenu a {
+	font-size: 14pt;
+	text-decoration: none;
+	display: block;
+	color: white;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+}
+
+.headermenu a:hover {
+	opacity: 1;
+	background-color: midnightblue;
+	text-decoration: none;
+}
+
+.headermenu .new {
+	color: #fdad9d !important;
+}
+
+#userinfo .headermenu {
+	left: 1em;
+	width: 11em;
+	position: absolute;
+}
+
+#userinfo .headermenu a {
+	padding-right: 0.7em !important;
+	text-align: right;
+}
+
+#siteinfo .headermenu {
+	margin: auto;
+	width: 12.6em;
+}
+
+#siteinfo-main {
+	margin: auto;
+	width: 13em;
+	height: 3em;
+}
+
+#siteinfo-main:hover,
+.dropdown-bg-highlighted {
+	background-color: #333;
+}
+
+#siteinfo-main a:hover,
+.dropdown-highlighted {
+	background-color: #222;
+}
+
+#siteinfo-main a.main {
+	padding: 0.5em;
+	display: inline-block;
+	width: 10em;
+	height: 2em;
+}
+
+#siteinfo-main a.main img {
+	height: 2em;
+}
+
+#siteinfo-main a.arrow-link {
+	position: absolute;
+	padding-top: .9em;
+	padding-right: .5em;
+	padding-bottom: .1em;
+	padding-left: .5em;
+	display: inline-block;
+	height: 2em;
+	width: 1em;
+}
+
+#siteinfo a span { /* for when there is no image, just text */
+	font-size: 15pt;
+	color: white;
+}
+
+#siteinfo a {
+	text-align: center;
+}
+
+#siteinfo img.arrow {
+	-webkit-transition: -webkit-transform .5s; /* Safari */
+	-moz-transition: -moz-tranform .5s; /* Firefox */
+	-ms-transition: -ms-transform .5s; /* IE */
+	transition: transform .5s;
+
+	-webkit-transform: rotateZ(0deg); /* Safari */
+	-moz-transform: rotateZ(0deg); /* Firefox */
+	-ms-transform: rotateZ(0deg); /* IE */
+	transform: rotateZ(0deg);
+
+	vertical-align: middle;
+}
+
+#siteinfo img.arrow.rotate {
+	-webkit-transform: rotateZ(180deg); /* Safari */
+	-moz-transform: rotateZ(180deg);  /* Firefox */
+	-ms-transform: rotateZ(180deg); /* IE */
+	transform: rotateZ(180deg);
+}
+
+#search {
+	width: 11em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0.5em;
+}
+
+#search input {
+	float: right;
+	border: none;
+	font-size: 12pt;
+	padding: 0.25em;
+	font-family: Lato, sans-serif;
+	width: 11em;
+	-webkit-appearance: none;
+}
+
+#refreshed-toc #toc-box:last-child {
+	display: none;
+}
+
+#preftoc li {
+	display: inline;
+}
+
+#preftoc li:before {
+	content: " - ";
+}
+
+#preftoc li:first-child:before {
+	content: none !important;
+}
+
+#footer {
+	position: relative;
+	top: 3.5em;
+	text-align: center;
+	padding-bottom: 15px;
+	color: #ccc;
+}
+
+#footer a {
+	color: white;
+}
+
+#footer * {
+	line-height: 1.5
+}
+
+#footer img {
+	vertical-align: text-top;
+}
+
+#footer #advert {
+	margin-bottom: 1em; /* enough spacing after ad */
+}
+
+#footer #advert p {
+	margin: 0;
+}
+
+/******************************** CONTENT/OTHER THINGS BEYOND CONTROL ******************************/
+
+h3,
+h4,
+h5,
+h6 {
+	font-weight: normal !important;
+}
+
+/* Fix for login/signup form pages not displaying in content section */
+#userlogin,
+#userloginForm {
+	float: none;
+}
+
+#localNotice {
+	margin-bottom: 0em !important;
+}
+
+#search {
+	position: static !important;
+	float: right;
+}
+
+.mw-search-formheader {
+	border: none !important;
+}
+
+#search input#searchText {
+	border: 1px solid #CCC !important
+}
+
+.printfooter {
+	display: none;
+}
+
+#cats {
+	padding: 1em;
+}
+
+#contentwrapper p:first-of-type {
+	margin-top: 0;
+}
+
+/*
+** keep the whitespace in front of the ^=, hides rule from konqueror
+** this is css3, the validator doesn't like it when validating as css2
+** copypasted from Monobook's main.css with s/#bodyContent/#content/ and img paths
+** adjusted accordingly
+*/
+#content a.external,
+#content a.external[href ^="gopher://"] {
+	/* @embed */
+	background: url(../../monobook/external-ltr.png) center right no-repeat;
+	padding-right: 13px;
+}
+
+#content a.external[href ^="https://"],
+.link-https {
+	/* @embed */
+	background: url(../../monobook/lock_icon.gif) center right no-repeat;
+	padding-right: 16px;
+}
+
+#content a.external[href ^="mailto:"],
+.link-mailto {
+	/* @embed */
+	background: url(../../monobook/mail_icon.gif) center right no-repeat;
+	padding-right: 18px;
+}
+
+#content a.external[href ^="news://"] {
+	/* @embed */
+	background: url(../../monobook/news_icon.png) center right no-repeat;
+	padding-right: 18px;
+}
+
+#content a.external[href ^="ftp://"],
+.link-ftp {
+	/* @embed */
+	background: url(../../monobook/file_icon.gif) center right no-repeat;
+	padding-right: 18px;
+}
+
+#content a.external[href ^="irc://"],
+.link-irc {
+	/* @embed */
+	background: url(../../monobook/discussionitem_icon.gif) center right no-repeat;
+	padding-right: 18px;
+}
+
+#content a.external[href $=".ogg"], #content a.external[href $=".OGG"],
+#content a.external[href $=".mid"], #content a.external[href $=".MID"],
+#content a.external[href $=".midi"], #content a.external[href $=".MIDI"],
+#content a.external[href $=".mp3"], #content a.external[href $=".MP3"],
+#content a.external[href $=".wav"], #content a.external[href $=".WAV"],
+#content a.external[href $=".wma"], #content a.external[href $=".WMA"],
+.link-audio {
+	/* @embed */
+	background: url("../../monobook/audio.png") center right no-repeat;
+	padding-right: 13px;
+}
+
+#content a.external[href $=".ogm"], #content a.external[href $=".OGM"],
+#content a.external[href $=".avi"], #content a.external[href $=".AVI"],
+#content a.external[href $=".mpeg"], #content a.external[href $=".MPEG"],
+#content a.external[href $=".mpg"], #content a.external[href $=".MPG"],
+.link-video {
+	/* @embed */
+	background: url("../../monobook/video.png") center right no-repeat;
+	padding-right: 13px;
+}
+
+#content a.external[href $=".pdf"], #content a.external[href $=".PDF"],
+#content a.external[href *=".pdf#"], #content a.external[href *=".PDF#"],
+#content a.external[href *=".pdf?"], #content a.external[href *=".PDF?"],
+.link-document {
+	/* @embed */
+	background: url("../../monobook/document.png") center right no-repeat;
+	padding-right: 12px;
+}
+
+/* Search suggestions */
+.suggestions {
+	position: fixed !important;
+	top: 2.5em !important; /* there is some JS doing odd stuff, this forces our value */
+}
+
+/* Category links */
+#catlinks {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+/* refresh-ify postedit, reset all the shadows and stuff */
+.postedit {
+	font-family: "Lato", sans-serif !important;
+	font-size: 1.1em !important;
+	line-height: 1em !important;
+	top: 3px !important;
+	border: none !important;
+	-webkit-text-shadow: none !important;
+	-moz-text-shadow: none !important;
+	text-shadow: none !important;
+
+	-webkit-border-radius: 0px !important;
+	-moz-border-radius: 0px !important;
+	border-radius: 0px !important;
+
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/* Fix funky diff padding to make diffs fully readable */
+td.diff-addedline .diffchange, td.diff-deletedline .diffchange {
+	padding: 0;
+}
+
+/* Better line spacing on recent changes */
+table.mw-enhanced-rc {
+	line-height: 1.5em;
+}
+
+/* "Updated since your last visit" marker on the page history of pages that are on your watchlist */
+span.updatedmarker {
+	background-color: #0f0;
+	color: #000;
+}
+
+/* [[MediaWiki:Noarticletext]] (the notice shown on nonexistent pages) */
+div.noarticletext {
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #000;
+	padding: .2em 1em;
+}
