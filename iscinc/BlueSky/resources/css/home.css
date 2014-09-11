@@ -1,0 +1,11 @@
+#intro,
+.wh_block {
+	display: none;
+}
+#actionbar {
+	height: 18px;
+}
+.minor_section {
+	border: none;
+	padding: 0;
+}
