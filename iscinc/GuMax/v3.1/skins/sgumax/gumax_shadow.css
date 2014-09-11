@@ -1,0 +1,132 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'gumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/*-----------------------------------------------------------------------------
+      YDS (Y Drop Shadow )
+-----------------------------------------------------------------------------*/
+    .yds {
+        display: block;
+        position: relative;
+        margin: 4px -4px -4px 4px;
+        background: url('images/shadow-grid.gif') repeat;
+        width: 100%; /* enlarge the shadow to full size */
+        }
+    /* ie6 ignores this selector */
+    html>body .yds {
+        margin: 10px -10px -10px 10px;
+        background: url('images/shadow.png') bottom right no-repeat;
+        width: 100%; /* enlarge the shadow to full size */
+        }
+
+    /* shadow corners */
+    .yds:before,
+    .yds:after {
+        content: " ";
+        display: block;
+        width: 10px;
+        height: 10px;
+        background: inherit;
+        }
+
+    .yds:before {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: -10px 0 0 auto;
+        background-position: right top;
+        }
+
+    .yds:after {
+        margin: -10px 0 0 -10px;
+        background-position: left bottom;
+        }
+
+    .yds .inner {
+        display: block;
+        position: relative;
+        overflow: hidden; /* prevents margin leakage from child elements */
+        left: -4px;
+        top: -4px;
+        }
+    /* ie6 ignores this selector */
+    html>body .yds .inner {
+        left: -10px;
+        top: -10px;
+        margin: 0;
+        }
+
+    .left {
+        float: left;
+        display: inline; /* fixes ie double margin-left bug */
+        }
+
+    .right { float: right; }
+
+/*-----------------------------------------------------------------------------
+    - Customize diferent style -
+-----------------------------------------------------------------------------*/
+    .note {
+        width: auto;
+        border: 1px solid #aaa;
+        padding: 10px;
+        background: #ffc;
+        color: #333;
+        }
+/*-----------------------------------------------------------------------------
+<div class="yds left">
+<div class="inner note">
+<strong>Note:</strong>
+Drop shadows are so beautiful.
+</div></div>
+-----------------------------------------------------------------------------*/
+
+    .normal {
+        width: auto;
+        border: 1px solid #aaa;
+        padding: 10px;
+        background: #FFF;
+        color: #000;
+        margin:0;
+        }
+/*-----------------------------------------------------------------------------
+<div class="yds left">
+<div class="inner normal">
+<strong>Note:</strong>
+Drop shadows are so beautiful.
+</div></div>
+
+<div class="yds right">
+<div class="inner normal">
+<strong>Note:</strong>
+Drop shadows are so beautiful.
+</div></div>
+-----------------------------------------------------------------------------*/
+
+
+/* The end 
+-----------------------------------------------------------------------------*/

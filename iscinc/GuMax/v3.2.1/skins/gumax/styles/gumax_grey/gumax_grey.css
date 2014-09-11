@@ -1,0 +1,93 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'gumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.2.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+
+/**
+ ** page width
+ **/ 
+    #gumax-rbox 
+    {
+        width: 977px;     /* width of the web page */
+    }
+
+/**
+ ** page style
+ **/ 
+    body 
+    {
+        background: #eee;
+    }
+
+    #gumax-content-body {
+        border: none;
+    }
+
+    #gumax-content-body,
+    #gumax-content-body-table {
+        background: #f1f1f1; /* content background color */
+    }
+
+    #gumax-content-body .gumax-content-left {
+        width:        165px; /* navigation menu width */
+    }
+    #gumax-content-actions {
+        margin-left:  173px; /* length of the page action menu bar "left + 8" */
+    }
+
+
+/**
+ ** DO NOT CHANGE THIS PART
+ **/
+    .gumax-rbtop         { background: transparent url('gm_header_t.jpg') repeat-x; }
+    .gumax-rbtop div     { background: transparent url('gm_header_t_l.jpg') no-repeat top left; }
+    .gumax-rbtop div div { background: transparent url('gm_header_t_r.jpg') no-repeat top right; }
+    .gumax-rbbot         { background: transparent url('gm_footer_b.jpg') repeat-x; }
+    .gumax-rbbot div     { background: transparent url('gm_footer_b_l.jpg') no-repeat top left; }
+    .gumax-rbbot div div { background: transparent url('gm_footer_b_r.jpg') no-repeat top right; }
+    .gumax-rbcontentwrap { background: #fff url('gm_shadow_l.jpg') repeat-y; } /* content background */
+    .gumax-rbcontent     { background: transparent url('gm_shadow_r.jpg') repeat-y right; }
+
+    .gumax-rbtop div, .gumax-rbtop, .gumax-rbbot div, .gumax-rbbot {
+        width: 100%;
+        height: 30px;
+        font-size: 1px;
+    }
+    .gumax-rbroundbox { margin: 0 auto; padding: 0; }
+
+    .gumax-rbcontent  { 
+        padding: 0px 15px; /* page margin */
+        margin: 0; 
+    }
+    #gumax-rbox {
+        position: relative;
+    }
+
+/**
+** DO NOT CHANGE THIS PART
+ **/
+

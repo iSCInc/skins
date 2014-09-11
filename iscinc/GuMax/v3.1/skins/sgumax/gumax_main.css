@@ -1,0 +1,56 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'gumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+   /* Note: be aware of the sequence */
+    @import url("main.css");
+    @import url("gumax_link_navigation.css");
+    @import url("gumax_template.css");
+    @import url("gumax_shadow.css");
+
+
+/* Your customization: un-comment lines according to your needs
+-----------------------------------------------------------------------------*/
+
+	/* header size */
+    #gumax-header {
+        /* background: #000 url('images/gumaxcomheader.jpg') center 30px no-repeat ; /* header background */
+        /* min-height: 208px; /* height of header */
+        /* height:     208px; /* need for IE */
+        }
+
+    /* page size */
+    #gumax-page, 
+    #gumax-page-actions,
+    #gumax-page-footer {
+        /* max-width:  740px !important;  /* need for Firefox */
+        /* width:      740px;  /* need for IE6 win */
+        }
+
+
+/* The end 
+-----------------------------------------------------------------------------*/

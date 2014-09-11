@@ -1,0 +1,69 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * '_ycgu_max_' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 2.0
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/*
+*** Body shadow
+ */
+
+    #body-shadow {
+        /*background: transparent url(shadow.png) bottom center repeat; */
+        background: none;
+        border: none; /* 1px solid #336699; */
+        }
+
+    .innerbox {
+        margin:        0px; /* make outer space to see shadow */
+        margin-top:    0; /* no top shadow */
+        margin-bottom: 0; /* no top shadow */
+        display: block;
+        overflow: hidden; /* prevents margin leakage from child elements */
+        border-left:    1px solid #6699FF; /* #999999; */
+        border-top:     1px solid #999999; /* #999999; */
+        border-right:   1px solid #6699FF; /* #336699; */
+        border-bottom:  1px solid #333366; /* #333366; */
+        }
+    .bottom-shadow {
+        padding-bottom: 0px; /* make outer space to see shadow */
+        /* background: transparent url(shadow.png) bottom center repeat-x; */
+        background: none;
+        }
+
+/* ----------------------------------------------------------
+ * -- make a few corners round --
+ * only supported by moz/firefox/other gecko browsers for now
+ * ----------------------------------------------------------
+ */
+    div.breadcrumbs {  
+        -moz-border-radius-topleft: 0.5em;
+        -moz-border-radius-topright: 0.5em;
+        -moz-border-radius-bottomleft: 0.5em;
+        -moz-border-radius-bottomright: 0.5em;
+        }
+
+/* The end 
+------------------------------------------------------------------------------------*/

@@ -1,0 +1,54 @@
+/* 
+* 6.0 - only fixes
+** content area 
+** workaround for various ie float bugs 
+*/
+
+    #header form { background: none; }
+
+    #column-content { 
+        float: none; 
+        margin-left: 0;
+        height: 1%;
+    }
+    #column-content #content {
+        margin-left: 12.2em;
+        margin-top: 3em;
+        height: 1%;
+    }
+    #column-one {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 4;
+    }
+
+/* 
+** fix external icon 
+*/
+    #mainContent a.external {
+        background: url(external.png) center right no-repeat;
+        padding-right: 13px;
+    }
+/* 
+** show the hand 
+*/
+    #p-logo a,
+    #p-logo a:hover {
+        cursor: pointer;
+    }
+    div.visualClear {
+        width:100%;
+        line-height: 0;
+    }
+
+    div.editsection,
+    #catlinks,
+    div.tright,
+    div.tleft {
+        position: relative;
+        }
+
+/* 
+** The end 
+*/

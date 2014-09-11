@@ -1,0 +1,70 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * '_ycgu_max_' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 2.0
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/* General Style
+----------------------------------------------------------------------------------- */
+
+    div.lightgreybox {
+        border: 1px solid #DDDDDD;
+        padding: 1em !important;
+        background-color: #FDFDFD;
+        overflow: hidden;
+        }
+    div.greybox {
+        border: 1px solid #CCCCCC;
+        padding: 1em !important;
+        background-color: #FAFAFA;
+        overflow: hidden;
+        }
+    div.darkgreybox {
+        border: 1px solid #BBBBBB;
+        padding: 1em !important;
+        background-color: #EEEEEE;
+        overflow: hidden;
+        }
+    #ycgu-list {
+        border: 1px solid #CCCCCC;
+        }
+    #paul-grey-bg {
+        background: #F0F0F0;
+        margin: 0;
+        padding: .1em 1em .1em 1em;
+        }
+    #paul-white-bg {
+        background: #FFFFFF;
+        margin: 0;
+        padding: 0 1em 0 1em;
+        }
+
+/* table style
+------------------------------------------------------------------------------------*/
+
+
+
+/* The end 
+------------------------------------------------------------------------------------*/

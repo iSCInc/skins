@@ -1,0 +1,168 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'ycgumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/*-----------------------------------------------------------------------------
+  General style
+-----------------------------------------------------------------------------*/
+
+    .googleContent {
+        margin: 5px 0;
+        text-align: center;
+        }
+
+    .googleReferral {
+        margin: 5px 0;
+        text-align: center;
+        }
+
+    .googleSearch {
+        margin: 5px 0;
+        text-align: center;
+        border: 1px solid #CCCCCC;
+        }
+
+
+    div.lightgreybox {
+        border: 1px solid #DDDDDD;
+        padding: 1em !important;
+        background-color: #FDFDFD;
+        overflow: hidden;
+        }
+    div.greybox {
+        border: 1px solid #CCCCCC;
+        padding: 1em !important;
+        background-color: #FAFAFA;
+        overflow: hidden;
+        }
+    div.darkgreybox {
+        border: 1px solid #BBBBBB;
+        padding: 1em !important;
+        background-color: #EEEEEE;
+        overflow: hidden;
+        }
+    #ycgu-list {
+        border: 1px solid #CCCCCC;
+        }
+    #paul-grey-bg {
+        background: #F0F0F0;
+        margin: 0;
+        padding: .1em 1em .1em 1em;
+        }
+    #paul-white-bg {
+        background: #FFFFFF;
+        margin: 0;
+        padding: 0 1em 0 1em;
+        }
+    div.clear {
+        padding: 0.5em;
+        }
+
+/*-----------------------------------------------------------------------------
+  Shadow style
+-----------------------------------------------------------------------------*/
+    div.shadow-cross {
+        background: transparent url("shade-cross-long.gif") top left no-repeat;
+        padding-top: 1.0em;
+        }
+    div.shadow-title {
+        background: transparent url("shadow-title.png") top left repeat-x;
+        padding-top: 1em;
+        }
+
+/*-----------------------------------------------------------------------------
+  Rounded corners - thin border line
+-----------------------------------------------------------------------------*/
+    .rbtop         { background: transparent url(c1_top.gif) repeat-x; }
+    .rbtop div     { background: transparent url(c1_top_left.gif) no-repeat top left; }
+    .rbtop div div { background: transparent url(c1_top_right.gif) no-repeat top right; }
+    .rbbot         { background: transparent url(c1_bottom.gif) repeat-x; }
+    .rbbot div     { background: transparent url(c1_bottom_left.gif) no-repeat top left; }
+    .rbbot div div { background: transparent url(c1_bottom_right.gif) no-repeat top right; }
+    .rbcontentwrap { background: transparent url(c1_left.gif) repeat-y; }
+    .rbcontent     { background: transparent url(c1_right.gif) repeat-y right; }
+
+    .rbtop div, .rbtop, .rbbot div, .rbbot {
+        width: 100%;
+        height: 7px;
+        font-size: 1px; 
+        }
+    .rbcontent  { padding: 2px 1em; margin: 0; }
+    .rbroundbox { margin: 0 auto; padding: 0; }
+
+    #rbox {
+        position: relative;
+        width: auto;  /* width of the box */
+        }
+/*-----------------------------------------------------------------------------
+<div id="rbox">
+<div class="rbroundbox"><div class="rbtop"><div><div></div></div></div>
+<div class="rbcontentwrap"><div class="rbcontent">
+Your content
+</div></div>
+<div class="rbbot"><div><div></div></div></div></div>
+</div>
+-----------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------
+  Rounded corners - gray background
+-----------------------------------------------------------------------------*/
+    .gray_box               { background: #F1F1F1; }
+    .gray_box .rbtop		{ background: transparent url(c2_top_right.gif) no-repeat top right; }
+    .gray_box .rbtop div	{ background: transparent url(c2_top_left.gif) no-repeat top left; }
+    .gray_box .rbbot		{ background: transparent url(c2_bottom_right.gif) no-repeat bottom right; }
+    .gray_box .rbbot div	{ background: transparent url(c2_bottom_left.gif) no-repeat bottom left; }
+
+    .gray_box .rbtop, .gray_box .rbtop div, .gray_box .rbbot, .gray_box .rbbot div {
+        width: 100%;
+        height: 5px;
+        font-size: 1px; 
+        }
+    .box_centent { margin: 0 10px; }
+
+    #gbox { 
+        position: relative;
+        background: transparent;
+        padding: 0;
+        width: auto;  /* width of the box */
+        }
+
+/*-----------------------------------------------------------------------------
+<div id="gbox">
+<div class="gray_box"><div class="rbtop"><div></div></div>
+<div class="box_centent">
+<h3>Your Title</h3>
+Your content
+</div>
+<div class="rbbot"><div></div></div></div>
+</div>
+-----------------------------------------------------------------------------*/
+
+
+/* The end 
+-----------------------------------------------------------------------------*/

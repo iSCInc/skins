@@ -1,0 +1,240 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'ycgumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/* 
+*** web site link and navigation style 
+ */
+
+/* Header
+-----------------------------------------------------------------------------*/
+	#header form #searchInput:hover, 
+    #header form #searchInput:focus {
+		background: #fff;
+	    }
+
+/* 
+** login Tools 
+*/
+    #p-login,
+    #p-login ul li a {
+        color: #333;
+        text-decoration: none;
+        }
+    #p-login ul li a:hover {
+        color: #000;
+        text-decoration: underline;
+        }
+
+/* 
+** navgation Tools 
+*/
+    #p-navigation ul li a {
+        color: #333;
+        background: transparent url("navigation_tab_y.gif") 0% -100px no-repeat;
+        text-decoration: none;
+    }
+    #p-navigation li {
+        background: transparent url("navigation_tab_y.gif") 100% -100px no-repeat;
+        text-decoration: none;
+    }
+    #p-navigation ul li:hover a,
+    #p-navigation #current-page:hover a{ 
+        background-position: 0%   -200px;  /* Mozilla Only */
+        color: #eee; 
+        text-decoration: none;
+        }
+    #p-navigation ul li:hover,
+    #p-navigation #current-page:hover { 
+        background-position: 100% -200px;  /* Mozilla Only */
+        text-decoration: none;
+        }
+/*
+    #p-navigation ul li:active a { 
+        background-position: 0%   0%;
+        text-decoration: none;
+        }
+    #p-navigation ul li:active { 
+        background-position: 100% 0%;
+        text-decoration: none;
+        }
+*/
+/*
+    #p-navigation #current-page a { 
+        color: #000;
+        background-position: 0%   -100px;
+        text-decoration: none;
+        }
+    #p-navigation #current-page { 
+        background-position: 100% -100px;
+        text-decoration: none;
+        }
+*/
+
+/* breadcrumbs 
+-----------------------------------------------------------------------------*/
+    div.breadcrumbs {
+        border: solid #FFCC00 1px;
+        padding: 3px 5px 5px 5px;
+        background: #FFF5CF;
+        margin: 5px 0px 10px 0px;
+        }
+    div.breadcrumbs a.breadcrumbs {
+        text-decoration: none;
+        }
+    div.breadcrumbs span.breadcrumbs {
+        font-weight: bold;
+        }
+
+
+/* Main content
+-----------------------------------------------------------------------------*/
+
+/* Navigation */
+    :link { color: #039; }
+    :visited { color: #636; }
+    :link:hover, :visited:hover { color: #333; }
+    :link:active, :link:active { color: #000; }
+
+/* new link style  */
+    a.new, 
+    #p-personal a.new { 
+        color: #FF0000; 
+        text-decoration: none; 
+        }
+    a.new:visited, 
+    #p-personal a.new:visited { 
+        color: #CC0000; 
+        text-decoration: none; 
+        }
+
+/* internal and external link style */
+    a:link,
+    a:visited,
+    #mBody a.external:link,
+    #mBody a.external:visited { 
+        color: #0033CC; 
+        text-decoration: none; 
+        }
+
+/* internal link navigation style */
+    a:link:hover, 
+    a:visited:hover { 
+        color: #003366; 
+        text-decoration: underline; 
+        }
+
+/* external link navigation style */
+    #mBody a.external:hover { 
+        color: #0066FF; 
+        text-decoration: underline; 
+        }
+    
+/* internal and external active link style */
+    a:link:active,
+    #mBody a.external:active  { 
+        color: #FF9900; 
+        text-decoration: none; 
+        }
+
+/* Navigation
+-----------------------------------------------------------------------------*/
+    #jump-to-nav { display: none; }
+
+	:link img, :visited img { border: 0; }
+	.deepLevel #mainContent :link img,
+	.deepLevel #mainContent :visited img {
+		border: medium solid;
+	    }
+	.deepLevel #mainContent #buttons :link img,
+	.deepLevel #mainContent #buttons :visited img {
+		border: 0;
+	    }
+
+/* Footer
+-----------------------------------------------------------------------------*/
+/* 
+** content Actions 
+*/
+    #contentActions ul li a {
+        color: #555;
+        }
+    #contentActions ul li a:hover {
+        color: #003399;
+        text-decoration: none;
+        border-bottom: 2px solid #3366CC;
+        }
+
+    /* selected menu style */
+    #contentActions ul li.selected a {
+        padding-bottom: 1px;
+        border-bottom:  2px solid #3366CC; /* active action menu */
+        /* background: #ddd; */
+        }
+
+/* 
+** personal Tools 
+*/
+    #personalTools,
+    #personalTools ul li a {
+        color: #666;
+        text-decoration: none;
+        }
+    #personalTools ul li a:hover {
+        color: #003366;
+        text-decoration: underline;
+        }
+
+/* 
+** footer 
+*/
+    #footer,
+    #footer ul li a {
+        color: #999;
+        text-decoration: none;
+        }
+
+	#footer a {
+		white-space: nowrap;
+	    }
+
+    #footer ul li a:hover {
+        color: #003366;
+        text-decoration: underline;
+        }
+
+/* Table pager (e.g. Special:Imagelist)
+-----------------------------------------------------------------------------*/
+    .TablePager_nav a { text-decoration: none; }
+
+    .TablePager th          { background-color: #eeeeff }
+    .TablePager td          { background-color: #ffffff }
+    .TablePager tr:hover td { background-color: #eeeeff }
+
+      
+/* The end 
+-----------------------------------------------------------------------------*/

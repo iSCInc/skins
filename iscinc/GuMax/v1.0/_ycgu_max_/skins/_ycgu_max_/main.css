@@ -1,0 +1,285 @@
+/* 
+ * -----------------------------------------------------
+ * '_ycgu_max_' style sheet for CSS2-capable browsers.
+ * Redesigned by Paul Yanchun Gu
+ * Seneca College @ York
+ * 10/24/2006
+ *
+ * Copyright paulgu.com - http://www.paulgu.com/
+ * License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * Loosely based on the monobook style by:
+ * Gabriel Wicke, Dave Shea, Fantasai
+ * Daniel Burka, Steven Garrity
+ * -----------------------------------------------------
+ */
+
+    @import url("_ycgu_template.css");
+    @import url("_ycgu_content.css");
+    @import url("_ycgu_max_.css");
+    @import url("_ycgu_maincss.css");
+
+/* -----------------------------------------------------
+ * -- body tweaks -- 
+ * -----------------------------------------------------
+ */
+
+/* 
+** body background 
+*/
+    body {
+        background: white url("bg_grey.jpg") repeat;
+        min-width: 680px;
+    }
+/* 
+** the size and background of the main body 
+*/
+    #container {
+        background: url("container_bg.gif") repeat-x;
+        width: 85%;   /* need for IE6 win */
+        max-width: 85%;
+    }
+/* 
+** body margin 
+*/
+    #mBody {
+        clear: both;
+        padding: 0;
+        margin: 0;
+    }
+/* 
+** main content background 
+*/
+    #mainContent {
+        float: none;
+        background: white url("main_content_bg.png") repeat-x; */
+        max-width: 100%;
+        margin: 0;
+        padding: 3em 4em 4em 4em;
+    }
+
+/* 
+** content page title format 
+*/
+    #mainContent h1 {
+        font-size: 1.6em;
+        font-weight: bolder;
+        color: #006699;
+    }
+/* -----------------------------------------------------
+ * -- Navigation tweaks -- text-decoration:
+ * -- none, underline, overline, line-through, blink
+ * -----------------------------------------------------
+ */
+/* 
+** internal navigation style 
+*/
+    a:link                        { color: #3366FF; text-decoration: underline; }
+    a:visited                     { color: #3366FF; }
+    a:link:hover, a:visited:hover { color: #00CC00; text-decoration: underline; }
+    a:link:active                 { color: #FF9900; }
+/* 
+** external navigation style 
+*/
+    #mBody a.external:link    { color: #3366FF; text-decoration: underline; }
+    #mBody a.external:visited { color: #3366FF; }
+    #mBody a.external:hover   { color: #FF3333; text-decoration: underline; }
+    #mBody a.external:active  { color: #FF9900; }
+
+/* -----------------------------------------------------
+ * -- disable edit section, looks professional -- 
+ * -----------------------------------------------------
+ */
+    * html div.editsection { font-size: 0em; }
+/* 
+** edit selection position 
+*/
+    .editsection {
+        margin-top: 0.6em;
+        font-size: 0em;
+    }
+/* -----------------------------------------------------
+ * -- header tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** search button style 
+*/
+    #header form {
+        border: 0;  /* 1px solid #000 */
+    }
+
+    #header form #searchGoButton {
+        vertical-align: middle;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    #header form #q {
+        font-size: 85%;
+        text-align: left;
+        vertical-align: middle;
+        
+        padding: 0;
+        margin-bottom: 0; /* fix the position, align with button image */
+        height: 16px;
+        width: 200px; /* text field width */
+    }
+/* 
+** header margin and header background 
+*/
+    #header {
+        background: #455372 url("header_bg.png") bottom left repeat-x;
+        padding: 15px 0;
+        margin: 0;
+    } #ignored {}
+/* 
+** disable rounded corner, don't need it
+** too much work after changing background
+*/
+    #header ul   { background: none; }  
+    #header h1   { background: none; }
+    #header form { background: none; }
+
+    #header ul li:hover a { background-position: 0%   -400px; color: #0033CC; }
+    #header ul li:hover   { background-position: 100% -400px; color: #0033CC; }
+
+    #header ul li.selected a { background-position: 0%   -200px; } /* this is not working */
+    #header ul li.selected   { background-position: 100% -200px; } /* this is not working */
+/* 
+** -- correct the tab order and font color for main menu --
+** tab background changing, doesn't work in IE
+*/
+    #header li {
+        background: transparent url("header_tab.png") 100% -600px no-repeat;
+        float: left;
+        border-bottom: 0;
+    }
+    #header ul a {
+        background: transparent url("header_tab.png") 0% -600px no-repeat;
+        float: left;
+        color: #000000; /* font color */
+    }
+/* 
+** Logo picture 
+*/
+    #header h1 a {
+        background: transparent url("header_logo.png") no-repeat;
+        width: 230px;
+        height: 60px;
+    }
+/* 
+** Top right documents icon 
+*/
+    #paulgu-documents a {
+        float: left;
+        border: 0; /* 0px solid #006699; */
+        width: 110px;
+        height: 28px;
+        background: transparent url("my_documents.png") no-repeat;
+        
+        margin: 5px 5px 2px 15px;
+    }
+/* -----------------------------------------------------
+ * -- textarea and navigation tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** textarea width 
+*/
+    textarea { width: 100%; }
+/* 
+** fix the extra margin at the bottom of the navigation bar 
+*/
+    #nav {
+        margin-bottom: 0;;
+    }	
+/* -----------------------------------------------------
+ * -- footer tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** footer margin 
+*/
+    #footer {
+        margin-top: 0;
+    }
+/* 
+** footer padding 
+*/
+    #footer ul {
+        padding: 0.3em;
+    }
+/* 
+** footer font size 
+*/
+    #footer td {
+        font-size: 85%;
+    }
+/* 
+** link style 
+*/
+    #footer li a {
+        color: #666666;
+    }
+    #footer li a:hover {
+        color: #0033CC;
+    }
+
+/* -----------------------------------------------------
+ * -- tool menu style at the bottom of the page -- 
+ * -----------------------------------------------------
+ */
+    #toolMenu {
+        font-size: 90%;
+        margin-top: 0;
+        padding: 0;
+    }
+    #toolMenu ul { 
+        text-align: center;
+        list-style: none;
+        margin: 0; 
+        padding: 0; 
+    }
+    #toolMenu li { 
+        display: inline;
+        border: none;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        background: none;
+    }
+    #toolMenu ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 90%;
+    }
+    #toolMenu ul li a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    #contentActions {
+        background: #FFFFFF url("content_actions_bg.png") repeat-x;
+        margin: 0;
+        padding-top:    0.7em;
+        padding-bottom: 0.7em;
+    }
+    #contentActions ul li a:hover {
+        color: #003399;
+        text-decoration: underline;
+    }
+
+    #personalTools {
+        background: #FFFFFF url("personal_tools_bg.png") repeat-x;
+        margin: 0;
+        padding-top:    0.7em;
+        padding-bottom: 0.7em;
+    }
+
+    #personalTools ul li a {
+        color: #FFCC00;
+    }
+/* 
+** The end 
+*/

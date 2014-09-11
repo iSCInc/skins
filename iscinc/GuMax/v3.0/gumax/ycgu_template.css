@@ -1,0 +1,529 @@
+/* 
+ * ----------------------------------------------------------------------------
+ * 'ycgumax' style sheet for CSS2-capable browsers.
+ *       Loosely based on the monobook style
+ *
+ * @Version 3.1
+ * @Author Paul Y. Gu, <gu.paul@gmail.com>
+ * @Copyright paulgu.com 2006 - http://www.paulgu.com/
+ * @License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * http://www.gnu.org/copyleft/gpl.html
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+/* Basic Structure
+-----------------------------------------------------------------------------*/
+
+    body, td, th, input { color: black; }   /* text color */
+
+	body {
+        /* background: transparent url("bg_dark.jpg") center center repeat-y; /* background-color: #FFF; */
+        background-color: #E8E8E8;
+		min-width:  780px;
+		margin: 0;
+        padding: 0;
+	    }
+
+	#container {
+        background: transparent url("container_bg.gif") top left repeat-x;
+        width:      780px;      /* need for IE6 win */
+        max-width:  780px; 
+		margin: 0 auto;
+        padding: 0;
+	    }
+
+/* 
+** main content style
+ */
+	#mBody {
+        position: relative !important;  /* content positioning, except IE */
+        position: relative;             /* content positioning for IE */
+        z-index: 2;
+        clear: both;
+        padding: 0;
+        margin: 0;
+	    }
+
+	#mainContent {
+        float: none;
+        background: white url("content_bg.gif") repeat-x;
+        color: black;
+        line-height: 1.4em; /* value other than 'normal' needed for WinIE */
+        margin: 0;          /* margin of the main content */
+        padding:     29px;  /* paddding of the main content */
+        padding-top: 30px;  /* top margin of the main content */
+	    }
+
+    #content {
+        overflow-x: visible;    /* need for Firefox, extreme long string :( */
+        }
+
+    #mainContent .firstHeading {    /* content page title format */
+        font-size: 1.6em;
+        color: #333;
+        font-weight: bolder;
+        /* background: transparent url("dotleft.gif") top left no-repeat;  /* page title icon */
+        padding: 0 0 .2em 0;     /* position of the title */
+        border: none;    /* No border for page title */
+        text-transform: uppercase;
+        }
+
+	.deepLevel #mainContent { line-height: 1.4; }
+
+/* 
+** top and bottom margin of the page 
+*/
+    #container-top    { margin-top: 0; }
+    #container-bottom { margin-bottom: 0; }
+
+/* Logo properties and style
+-----------------------------------------------------------------------------*/
+    #p-logo,
+    #p-logo a, 
+    #p-logo a:hover { width:  180px; height: 72px; }
+
+    #p-logo {
+        z-index: 200;
+        position: absolute; /*needed to use z-index */
+        top: 15px;
+        left: 10px; /* left margin of the logo, which is same as content margin */
+        overflow: visible;
+        }
+    #p-logo h5 { display: none; }
+    #p-logo a,
+    #p-logo a:hover {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: 35% 50% !important;
+        text-decoration: none;
+        }
+
+/* Header Style
+-----------------------------------------------------------------------------*/
+/* 
+** Header 
+*/
+	#header {
+        /* background: #fff url("header_bg.gif") top left repeat-x; */
+        background: #fff;
+		position: relative;
+        z-index: 100;     /* make logo visible over content*/
+		min-height: 80px; /* height of header */
+		height:     80px; /* need for IE */
+		voice-family: "\"}\"";
+		voice-family: inherit;
+        margin: 0;
+		padding-top: 30px; /* height factor of header */
+	    } #ignored {}
+
+/* 
+** Login 
+*/
+    /* this is for debugging */
+    #p-login {
+         /* border:  1px solid #000; /* for debugging */
+        }
+
+    #p-login ul li {
+        font-size: 85%; /* font size of login tools */
+        }
+
+    /* the icon in front of the user name, single quotes
+     * in bg url to hide it from iemac 
+     */
+
+    #p-login {
+        /* background: transparent url("login_tools_bg.png") top left no-repeat; */
+        /* background: #E8E8E8;    /* same as body background color */
+        background: transparent url(user.gif) 0% 60% no-repeat;
+        padding-left: 15px;
+        text-transform: none;
+        }
+
+    #p-login {
+		position: absolute;
+        top: 0;    /* located at bottom right of header */
+        right: 0;  /* located at bottom right of header, same as content margin */
+        height:         20px; /* need for IE */
+        min-height:     20px; 
+        padding-top:    .2em;
+        padding-bottom: .2em;
+        /* padding-right:  5px; */
+        }
+
+	#p-login ul {
+		width: auto;
+		margin-left: 3px;
+		padding-right: 7px; /* margin right of login */
+		list-style: none;
+		z-index: 90; /* below the H1 */
+	    }
+
+	#p-login li {
+        display: inline;
+        float: left;    /* the tab order */
+        display: inline;
+        white-space: nowrap;
+		margin-left: 3px;  /* margin betwen items */
+	    }
+	#p-login ul a {
+        float: left;    /* the tab order */
+		display: block;
+        margin-right: 3px;  /* margin betwen items */
+	    }
+
+
+/* 
+** Search 
+*/
+
+    /* this is for debugging */
+    #p-search {
+        /* border:  1px solid #000; /* for debugging */
+        }
+
+    #p-search {
+        position: absolute; 
+        z-index: 3;
+        right:0;        /* located at bottom right of header */
+        bottom: 0;      /* located at bottom right of header */
+		min-height: 60px; /* height of search field */
+		height:     60px; /* need for IE */
+        width: 100%;
+        }
+	#p-search .pBody,
+    #searchBody {
+        background: none;
+        border: none;  /* 1px solid #000; */
+		position: absolute;
+		right:  10px;   /* right side margin of search, same as content margin */
+        bottom: 42px;   /* the location of the search in the header */
+		text-align: left;       
+		white-space: nowrap;    /* for Opera */
+	    }
+
+    #p-search form #searchInput {
+        font-size: 97%;
+        width: 15em;   /* text field width */
+        height: 14px;  /* text field height */
+        text-align: left;
+        vertical-align: middle;
+		border:	1px solid #CCCCCC; /* text field border style */
+		background: #FFFFEE; /* background color of the text field */
+        padding: 0;
+        margin: 0;   /* fix the position, align with button image */
+	    }
+
+    #p-search form #searchGoButton {
+        vertical-align: middle;
+        padding: 0;
+        margin-left: 0;  /* margin between buttons */
+    }
+
+	#p-search form #submit {
+		background: #6A7389;
+		color: #fff;
+		padding: 1px 4px;
+		border-right:   1px solid #283043;
+		border-bottom:  1px solid #283043;
+		border-top:     1px solid #9097A2;
+		border-left:    1px solid #9097A2;
+	    }
+
+/* 
+** Navigation 
+*/
+	#p-navigation ul {
+		width: auto;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		padding: 0 10px 0 0;    /* right side margin of the tabs, same as content margin */
+		list-style: none;
+		z-index: 90; /* below the H1 */
+	    }
+
+	#p-navigation li {
+        display: inline;
+        float: left;    /* the tab order */
+        display: inline;
+        white-space: nowrap;
+		padding: 0 5px 0 0; /* display the right side of the tab */
+		margin: 0 0 0 2px;  /* margin betwen tabs */
+        border-bottom: 0;
+	    }
+	#p-navigation ul a {
+        float: left;    /* the tab order */
+        color: #000000; /* font color */
+		display: block;
+		padding: 2px 3px 3px 7px; /* padding inside the tab */
+		font-weight: bold;
+	    }
+
+/* table of content styles
+-----------------------------------------------------------------------------*/
+    #toc, .toc, .mw-warning {
+        font-size: 95%;
+        border: 1px solid #AAAAAA;
+        background-color: #FBFBFB;
+        padding: .5em;
+        margin-bottom: 1.2em;
+        }
+
+    #toc h2, .toc h2 { 
+        border: none; 
+        margin: 0;  /* fix toc top margin */
+        padding-right: .2em; /* margin between title and hide/show link */
+        display: inline;  /* display the hide/show link after Contents */
+        }
+    
+    #toc #toctitle,
+    .toc #toctitle,
+    #toc .toctitle,
+    .toc .toctitle {
+        text-align: left; /* left adjust of title */
+        }
+
+    #toc ul, .toc ul {
+        list-style-type: none;
+        list-style-image: none;
+        margin:  0; 
+        padding: .3em 0 0 .7em; /* margin of the item list */
+        text-align: left;
+        }
+    #toc ul ul, .toc ul ul {
+        margin: 0 0 0 2em;
+        }
+
+    #toc .tocindent   { margin-left: 1em; }
+    #toc .tocline     { margin-bottom: 0; }
+    #toc p            { margin: 0 }
+    #toc .toctoggle   { font-size: 95%; }
+
+    #toc .editsection {
+        margin-top: .7em;
+        font-size: 95%;
+        }
+
+/* main content
+-----------------------------------------------------------------------------*/
+
+    ul {
+        list-style-image: url(yellowbullet.gif);
+        }
+    #editform {
+        width: 100%; /* prevent overflow in IE when editing */
+        }
+    textarea {
+        font-size: 99%;
+        width: 99%;     /* fix the textarea oversize in IE */
+        padding: 5px 0 0 5px;
+        margin: 0;
+        border: 1px solid #3399FF;
+        }
+
+/* pre{ */
+    /* white-space: pre;            /* CSS2 */
+    /* white-space: -moz-pre-wrap;  /* Mozilla */
+    /* white-space: -hp-pre-wrap;   /* HP printers */
+    /* white-space: -o-pre-wrap;    /* Opera 7 */
+    /* white-space: -pre-wrap;      /* Opera 4-6 */
+    /* white-space: pre-wrap;       /* CSS 2.1 */
+    /* white-space: pre-line;       /* CSS 3 (and 2.1 as well, actually) */
+    /* word-wrap: break-word;       /* IE */
+    /* } */
+
+    pre {
+        white-space: -moz-pre-wrap;     /* need for Firefox */
+        overflow-x: auto;    /* need for Firefox, extreme long string :( */
+        font-size: 95%;
+        padding: .5em;
+        border: 1px dashed #2f6fab;
+        color: black;
+        background-color: #f9f9f9;
+        line-height: 1.1em;
+        }
+    .visualClear { clear: both; }
+
+/* disable edit section, make it look professional
+-----------------------------------------------------------------------------*/
+    * html div.editsection { 
+        font-size: 85%;
+        }
+    .editsection {
+        display: none;
+        font-size: 85%;
+        margin-top: .6em;
+        }
+
+/* category style
+-----------------------------------------------------------------------------*/
+    #catlinks {
+        border: 1px solid #aaa;
+        background-color: #f9f9f9;
+        padding: .3em;
+        margin-top: 1em;
+        clear: both;
+        }
+    #catlinks p, .catlinks {
+        margin:  0;
+        padding: 0;
+        }
+
+/* Footer
+-----------------------------------------------------------------------------*/
+/* 
+ * -- content bottom style (at the bottom of the page) -- 
+ */
+    #contentBottom ul li, 
+    #contentBottom #f-message {
+        font-size: 85%; /* font size of bottom page */
+        }
+
+    #contentBottom {
+        text-align: center; /* position of the Footer content */
+        position: relative;
+        }
+    #contentBottom ul { 
+        list-style: none;
+        margin: 0;
+        }
+    #contentBottom li { 
+        display: inline;
+        margin: 0;
+        overflow: visible;
+        }
+
+    #contentActions,
+    #personalTools,
+    #footer {
+        padding: 0 10px; /* left margin of the Footer, which is same as content margin */
+        }
+
+/* 
+ * -- content actions menu -- 
+ */
+    #contentActions {
+        background: #fff;
+        position: relative;
+        /* background: transparent url("content_actions_bg.gif") top left repeat-x; */
+        margin: 0;
+        height: 1.5em;  /* need for IE win */
+        padding-top:    .9em;
+        padding-bottom: .9em;
+        border-bottom:  2px solid #ddd;
+        }
+
+/* 
+ * -- personal tools menu -- 
+ */
+    #personalTools {
+        background: #e8e8e8;
+        margin: 0;
+        padding-top:    .4em;
+        padding-bottom: .3em;
+        }
+
+/* 
+ * -- footer -- 
+ */
+	#footer {
+        background: #e8e8e8;
+        clear: both;
+		border: 0; /* 1px solid #999; */
+        padding-top:    .2em;
+        padding-bottom: 1.5em;
+	    }
+	#footer ul {
+        list-style: none;
+		margin: 0;
+	    }
+	#footer li {
+		display: inline;
+		white-space: nowrap;
+	    }
+
+    #f-message {
+        padding-bottom: .2em;
+        }
+
+
+/* Special:Specialpages
+-----------------------------------------------------------------------------*/
+    .imagelist, .TablePager {
+        }
+
+    .imagelist_nav, .TablePager_nav {
+        margin-top: 0.5em;
+        }
+
+/* Random HTML Style 
+-----------------------------------------------------------------------------*/
+    hr {
+        height: 1px;
+        color: #aaa;
+        background-color: #aaa;
+        border: 0;
+        margin: .2em 0 .2em 0;
+        }
+
+	input[type="submit"] { font-weight: bold; }
+
+    /* for margin between paragraphs */
+    .cc {
+        font-size: 10%;
+        padding: 0.2em 0 0.2em 0;
+        margin: 0;
+        }
+    /*-------------------------------------
+        <div class="cc">&nbsp;</div>
+    -------------------------------------*/
+
+/* 
+ * Force Opera / Moz / Netscape 
+ * to display an _IN_active vertical scrollbar 
+ * (like IE).
+ */
+
+    html {
+        overflow-y: scroll;
+    }
+
+/* -----------------------------------------------------------
+   -- make a few corners round --
+   only supported by moz/firefox/other gecko browsers for now
+   -----------------------------------------------------------
+ */
+    div.breadcrumbs {  
+        -moz-border-radius-topleft: 0.5em;
+        -moz-border-radius-topright: 0.5em;
+        -moz-border-radius-bottomleft: 0.5em;
+        -moz-border-radius-bottomright: 0.5em;
+        }
+
+/* IE/Mac fixes
+-----------------------------------------------------------------------------*/
+    /* fix for position of image inside table */
+	table {
+        /* position: none !important;  /* positioning, except IE */
+        /* position: relative;         /* positioning for IE */
+        }
+
+/* The end 
+-----------------------------------------------------------------------------*/

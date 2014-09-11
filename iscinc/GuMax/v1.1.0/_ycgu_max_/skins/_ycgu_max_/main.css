@@ -1,0 +1,365 @@
+/* 
+ * -----------------------------------------------------
+ * '_ycgu_max_' style sheet for CSS2-capable browsers.
+ * Redesigned by Paul Yanchun Gu
+ * Seneca College @ York
+ * 10/24/2006
+ *
+ * Copyright paulgu.com - http://www.paulgu.com/
+ * License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * Loosely based on the monobook style by:
+ * Gabriel Wicke, Dave Shea, Fantasai
+ * Daniel Burka, Steven Garrity
+ * -----------------------------------------------------
+ */
+
+    @import url("_ycgu_template.css");
+    @import url("_ycgu_content.css");
+    @import url("_ycgu_max_.css");
+    @import url("_ycgu_maincss.css");
+
+/* -----------------------------------------------------
+ * -- body tweaks -- 
+ * -----------------------------------------------------
+ */
+
+/* 
+** body background 
+*/
+    body {
+        background: white url("bg_grey.jpg") repeat;
+        min-width: 680px;
+    }
+/* 
+** margin on top of the header 
+*/
+    #container-top {
+        margin-top: 3em;
+    }
+/* 
+** margin at bottom of the body 
+*/
+    #container-bottom {
+        margin-bottom: 0;
+    }
+
+/* 
+** the size and background of the main body 
+*/
+    #container {
+        background: url("container_bg.gif") repeat-x;
+        width: 85%;   /* need for IE6 win */
+        max-width: 85%;
+    }
+/* 
+** body margin 
+*/
+    #mBody {
+        clear: both;
+        padding: 0;
+        margin: 0;
+    }
+/* 
+** main content background 
+*/
+    #mainContent {
+        float: none;
+        background: white url("main_content_bg.png") repeat-x; */
+        max-width: 100%;
+        margin: 0;
+        padding: 3em 4em 4em 4em;
+    }
+/* 
+** jump to 
+*/
+#jump-to-nav {
+	display: none;
+}
+
+/* 
+** content page title format 
+*/
+    #mainContent h1 {
+        font-size: 1.6em;
+        font-weight: bolder;
+        color: #006699;
+        margin: 0;
+        border: 0;
+    }
+/* 
+** breadcrumbs 
+*/
+    div.breadcrumbs {
+        border: solid #FFCC33 1px;
+        padding: 3px 5px 5px 5px;
+        background: #F9F9F9;
+        margin: 5px 0px 10px 0px;
+        font-size: 0.9em;
+    }
+    div.breadcrumbs a.breadcrumbs {
+        text-decoration: none;
+    }
+    div.breadcrumbs span.breadcrumbs {
+        font-weight: bold;
+    }
+
+/* -----------------------------------------------------
+ * -- Navigation tweaks -- text-decoration:
+ * -- none, underline, overline, line-through, blink
+ * -----------------------------------------------------
+ */
+/* 
+** new link style 
+*/
+    a.new, #p-personal a.new                 { color: #FF0000; text-decoration: none; }
+    a.new:visited, #p-personal a.new:visited { color: #CC0000; text-decoration: none; }
+/* 
+** internal link navigation style 
+*/
+    a:link                        { color: #3366CC; text-decoration: none; }
+    a:visited                     { color: #3366CC; text-decoration: none; }
+    a:link:hover, a:visited:hover { color: #00CC00; text-decoration: underline; }
+    a:link:active                 { color: #FF9900; text-decoration: none; }
+/* 
+** external link navigation style 
+*/
+    #mBody a.external:link    { color: #3366CC; text-decoration: none; }
+    #mBody a.external:visited { color: #3366CC; text-decoration: none; }
+    #mBody a.external:hover   { color: #FF6600; text-decoration: underline; }
+    #mBody a.external:active  { color: #FF9900; text-decoration: none; }
+
+/* -----------------------------------------------------
+ * -- disable edit section, looks professional -- 
+ * -----------------------------------------------------
+ */
+    * html div.editsection { font-size: 0em; }
+/* 
+** edit selection position 
+*/
+    .editsection {
+        display: none;
+        margin-top: 0.6em;
+        font-size: 75%;
+    }
+
+
+/* -----------------------------------------------------
+ * -- Top Header: My Online Documents, Google AdSense -- 
+ * -----------------------------------------------------
+ */
+
+/* 
+** Top left documents icon 
+*/
+    #paulgu-documents {
+        vertical-align: bottom;
+    }
+
+    #paulgu-documents a {
+        float: left;
+        border: 0; /* 1px solid #006699; */
+        width: 110px;
+        height: 28px;
+        background: transparent url("my_documents.png") no-repeat;
+        
+        margin: 2em 5px 2px 15px;
+    }
+
+/* 
+** google-adsense 
+*/
+    #google-adsense {
+        float: right;
+        margin: 5px 12px 2px 15px;
+    }
+    #google-adsense-bottom {
+        text-align: center;
+        margin: 0 0 2em 0;
+    }
+
+/* -----------------------------------------------------
+ * -- header tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** search button style 
+*/
+    #header form {
+        border: 0;  /* 1px solid #000 */
+    }
+
+    #header form #searchGoButton {
+        vertical-align: middle;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    #header form #q {
+        font-size: 85%;
+        text-align: left;
+        vertical-align: middle;
+        
+        padding: 0;
+        margin-bottom: 0; /* fix the position, align with button image */
+        height: 16px;
+        width: 200px; /* text field width */
+    }
+/* 
+** header margin and header background 
+*/
+    #header {
+        background: #455372 url("header_bg.png") bottom left repeat-x;
+        padding: 15px 0;
+        margin: 0;
+    } #ignored {}
+/* 
+** disable rounded corner, don't need it
+** too much work after changing background
+*/
+    #header ul   { background: none; }  
+    #header h1   { background: none; }
+    #header form { background: none; }
+
+    #header ul li:hover a { background-position: 0%   -400px; color: #0033CC; }
+    #header ul li:hover   { background-position: 100% -400px; color: #0033CC; }
+
+    #header ul li.active a { background-position: 0%   -200px; } /* this is not working */
+    #header ul li.active   { background-position: 100% -200px; } /* this is not working */
+
+/* 
+** -- correct the tab order and font color for main menu --
+** tab background changing, doesn't work in IE
+*/
+    #header li {
+        background: transparent url("header_tab.png") 100% -600px no-repeat;
+        float: left;
+        border-bottom: 0;
+    }
+    #header ul a {
+        background: transparent url("header_tab.png") 0% -600px no-repeat;
+        float: left;
+        color: #000000; /* font color */
+    }
+    #header li {
+        margin: 0 2px 0 0; /* margin betwen tabs */
+    }
+
+/* 
+** Logo picture 
+*/
+    #header h1 a {
+        background: transparent url("header_logo.png") no-repeat;
+        width: 230px;
+        height: 60px;
+    }
+
+/* -----------------------------------------------------
+ * -- textarea and navigation tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** textarea width tweak
+*/
+    textarea { width: 100%; }
+/* 
+** fix the extra margin at the bottom of the navigation bar 
+*/
+    #nav {
+        margin-bottom: 0;;
+    }	
+/* -----------------------------------------------------
+ * -- footer tweaks -- 
+ * -----------------------------------------------------
+ */
+/* 
+** footer margin 
+*/
+    #footer {
+        margin: 0;
+    }
+/* 
+** footer padding 
+*/
+    #footer ul {
+        padding: 0.3em;
+    }
+/* 
+** footer font size 
+*/
+    #footer td {
+        font-size: 85%;
+    }
+/* 
+** footer link style 
+*/
+    #footer li a {
+        color: #666666;
+    }
+    #footer li a:hover {
+        color: #0033CC;
+    }
+
+/* -----------------------------------------------------
+ * -- tool menu style (at the bottom of the page) -- 
+ * -----------------------------------------------------
+ */
+    #toolMenu {
+        font-size: 90%;
+        margin-top: 0;
+        padding: 0;
+    }
+    #toolMenu ul { 
+        text-align: center;
+        list-style: none;
+        margin: 0; 
+        padding: 0; 
+    }
+    #toolMenu li { 
+        display: inline;
+        border: none;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        background: none;
+    }
+    #toolMenu ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 90%;
+    }
+    #toolMenu ul li a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    #contentActions {
+        background: #FFFFFF url("content_actions_bg.png") repeat-x;
+        margin: 0;
+        padding-top:    0.7em;
+        padding-bottom: 0.7em;
+    }
+    #contentActions ul li a:hover {
+        color: #003399;
+        text-decoration: underline;
+    }
+
+    #personalTools {
+        background: #FFFFFF url("personal_tools_bg.png") repeat-x;
+        margin: 0;
+        padding-top:    0.7em;
+        padding-bottom: 0.7em;
+    }
+
+    #personalTools ul li a {
+        color: #FFCC00;
+    }
+
+    #contentActions ul li.selected a {
+        border: 1px solid #3366CC; /* active action item */
+        padding: 0 3px 1px 3px;
+    }
+ 
+/* 
+** The end 
+*/
