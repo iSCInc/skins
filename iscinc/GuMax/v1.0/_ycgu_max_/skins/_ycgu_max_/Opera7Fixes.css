@@ -1,0 +1,16 @@
+/* 
+** opera 7 fixes 
+*/
+#p-cactions {
+	margin-top: .1em;
+}
+#p-cactions li a {
+	top: 2px;
+}
+#bodyContent a.external {
+	background: url(external.png) center right no-repeat;
+	padding-right: 13px;
+}
+/* 
+** The end 
+*/

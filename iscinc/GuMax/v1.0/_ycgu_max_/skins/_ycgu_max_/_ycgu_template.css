@@ -1,0 +1,279 @@
+/* 
+ * -----------------------------------------------------
+ * '_ycgu_max_' style sheet for CSS2-capable browsers.
+ * Redesigned by Paul Yanchun Gu
+ * Seneca College @ York
+ * 10/24/2006
+ *
+ * Copyright paulgu.com - http://www.paulgu.com/
+ * License: GPL (http://www.gnu.org/copyleft/gpl.html)
+ *
+ * Loosely based on the monobook style by:
+ * Gabriel Wicke, Dave Shea, Fantasai
+ * Daniel Burka, Steven Garrity
+ * -----------------------------------------------------
+ */
+
+/* 
+** -- Basic Structure -- 
+*/
+	body {
+        background: #fff url("body_back.gif") repeat-x;
+		min-width: 610px;
+		margin: 20px;
+	}
+
+	#container {
+		max-width: 70em;
+		margin: 0 auto;
+	}
+	
+	#mBody {
+		clear: both;
+		padding: 0 0 1em 0;
+	}
+
+	#side {
+		float: left;
+		width: 23%;
+		margin-bottom: 1em;
+	}
+
+	#mainContent {
+		float: right;
+		/* width: 75%; */ /* modified by paul, to extend body fully */
+		margin-bottom: 1em;
+	}
+	.nomenu #mainContent {
+		float: none;
+		width: 100%;
+	}
+	.bodyleft {
+		float: right !important;
+		width: 75% !important;
+	}
+	#mainContent.right {
+		float: left;
+		width: 62%;
+	}
+	
+	#side.right {
+		float: right;
+		width: 35%;
+	}
+/* 
+** Header 
+*/
+	#header { margin-bottom: 1em; }
+	#header ul {
+		margin: 0 0 1em 0;
+		padding: 0;
+	}
+	#header li {
+		display: inline;
+		padding: 0 20px 0 0;
+		margin: 0;
+		white-space: nowrap;
+	}
+/* 
+** Sidebar 
+*/
+	#getcd {
+		margin: 1em 0 0 45px;
+	}
+/* 
+** Footer 
+*/
+	#footer {
+		clear: both;
+		margin-top: 1em;
+	}
+	#footer ul {
+		margin: 0 0 1em 0;
+		padding: 0;
+	}
+	#footer li {
+		display: inline;
+		padding: 0 20px 0 0;
+		margin: 0;
+		white-space: nowrap;
+	}
+	#footer p {
+		margin: 0.6em 0;
+	}
+/*
+** Accessibility tweaks
+*/
+	.skipLink {
+		position: absolute;
+		left: -999px;
+		width: 990px;
+	}
+	hr.hide {
+		display: none;
+	}
+/* 
+** --- end of Basic Structure --- 
+*/
+/* 
+** Header 
+*/
+	#header {
+		background: #455372 url("header_bl.png") bottom left repeat-x;
+		position: relative;
+		min-height: 39px;
+		height: 5em;
+		padding: 0;
+		voice-family: "\"}\"";
+		voice-family: inherit;
+		height: 3em;
+		padding: 15px 0;
+	} #ignored {}
+	#header h1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+		font-size: 2px;
+		background: url("header_tl.gif") no-repeat;
+		height: 8px;
+		z-index: 100; /* above the UL */
+	}
+	#header h1 a {
+		display: block;
+		width: 268px;
+		height: 64px;
+		background: transparent url("header_logo.gif") no-repeat;
+		text-indent: -700em;
+		text-decoration: none;
+	} 
+	#header ul {
+		width: auto;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 0;
+		padding: 0 15px 0 0;
+		list-style: none;
+		background: url("header_br.gif") no-repeat bottom right;
+		z-index: 90; /* below the H1 */
+	}
+	#header li {
+		float: right;
+		background: transparent url("header_tab.gif") 100% -600px no-repeat;
+		padding: 0 6px 0 0;
+		margin: 0 1px 0 0;
+		border-bottom: 1px solid #515358;
+	}
+	#header ul a {
+		float: left;
+		display: block;
+		padding: 4px 4px 4px 10px;
+		background: transparent url("header_tab.gif") 0% -600px no-repeat;
+		font-weight: bold;
+		color: #fff;
+		text-decoration: none;
+	}
+	#header ul li:hover a { background-position: 0% -400px; }
+	#header ul li:hover { background-position: 100% -400px; }
+/*
+** menu effect 
+*/
+	body.sectionHome li#menu_Main_Page a,
+	body.sectionResume li#menu_Resume a,
+	body.sectionProjects li#menu_Projects a,
+	body.sectionLinks li#menu_Links a,
+	body.sectionContact_me li#menu_Contact_me a {
+		background-position: 0% -200px;
+		color: #039;
+	}
+	body.sectionHome li#menu_Main_Page,
+	body.sectionResume li#menu_Resume,
+	body.sectionProjects li#menu_Projects,
+	body.sectionLinks li#menu_Links,
+	body.sectionContact_me li#menu_Contact_me {
+		background-position: 100% -200px;
+		border-bottom: 1px solid #fff;
+	}
+	body.sectionHome li#menu_Main_Page:hover,
+	body.sectionResume li#menu_Resume:hover,
+	body.sectionProjects li#menu_Projects:hover,
+	body.sectionLinks li#menu_Links:hover,
+	body.sectionContact_me li#menu_Contact_me:hover {
+		background-position: 100% 0%;
+	}
+	body.sectionHome li#menu_Main_Page:hover a,
+	body.sectionResume li#menu_Resume:hover a,
+	body.sectionProjects li#menu_Projects:hover a,
+	body.sectionLinks li#menu_Links:hover a,
+	body.sectionContact_me li#menu_Contact_me:hover a {
+		background-position: 0% 0%;
+		color: #333;
+	}
+/* 
+** Search Field 
+*/
+	#header form {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 12px 20px 0 0;
+		background: url("header_tr.gif") no-repeat top right;
+		margin: 0; /* need for IE Mac */
+		text-align: right; /* need for IE Mac */
+		white-space: nowrap; /* for Opera */
+	}
+	#header form label { color: #fff; font-size: 85%; }
+	#header form input { font-size: 85%; }
+	#header form #submit {
+		font-size: 85%;
+		background: #6A7389;
+		color: #fff;
+		padding: 1px 4px;
+		border-right: 1px solid #283043;
+		border-bottom: 1px solid #283043;
+		border-top: 1px solid #9097A2;
+		border-left: 1px solid #9097A2;
+	}
+	#header form #q {
+		width: 170px;
+		font-size: 85%;
+		border:	1px solid #9097A2;
+		background: #D9DBE1;
+		padding: 2px;
+	}
+	#header form #q:hover, #header form #q:focus {
+		background: #fff;
+	}
+/* 
+** Footer 
+*/
+	#footer {
+		border-top: 1px solid #999;
+		margin: 2em 0;
+		padding: 1em 0;
+		text-align: center;
+	}
+	#footer ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#footer li {
+		display: inline;
+	}
+	#footer a {
+		white-space: nowrap;
+	}
+	#footer p,#footer p a {
+		color: #666;
+	}
+	#footer p a:hover {
+		color: #000;
+	}
+	#footer p span {
+		padding-right: 1em;
+	}
+/* 
+** The end 
+*/
