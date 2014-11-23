@@ -1,0 +1,10 @@
+#header-wrap,
+#mw-js-message,
+.entry-meta,
+#footer-wrap {
+	display:none;
+}
+
+.printfooter {
+	text-align: left;
+}

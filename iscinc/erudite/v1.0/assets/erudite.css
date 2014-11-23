@@ -1,0 +1,633 @@
+/*
+ *	Based on The Erudite WordPress theme by Soma Design
+ *	http://somadesign.ca/
+ *
+ *	Licensed under the GPL 2.0
+ *	http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ */
+
+/* Layout */
+#container,
+#header,
+#access,
+#footer-wrap-inner {
+	min-width: 96em;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+}
+
+#content {
+	padding: 2.4em 6em 0em 6em;
+}
+
+#header-wrap,
+#footer-wrap {
+	min-width: 960px;
+}
+
+/* Use dark stripes around edge to focus on content */
+div#container {
+	background: white;
+	padding-top: 2em;
+}
+
+div#wrapper {
+	/* @embed */
+	background: #fafafa url(images/stripes-dark.png);
+}
+
+/* Typography Base */
+body {
+	font-family: constantia, 'hoefler text', 'palatino linotype', serif;
+	font-size: 10px;
+	line-height: 1.5;
+	background: #fafafa;
+	color: #333333;
+}
+
+textarea,
+select,
+input {
+	font-size: 12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: corbel, 'gill sans', 'gill sans mt', sans-serif;
+	font-weight: normal;
+	letter-spacing: 0.05em;
+	text-rendering: optimizeLegibility;
+}
+
+h1 {
+	font-size: 2.4em;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 1.333em 0 0.333em;
+}
+
+h2 {
+	font-size: 2.0em;
+	line-height: 1.1;
+	margin: 1em 0 0.25em;
+}
+
+h3 {
+	font-size: 1.9em;
+	line-height: 1.2;
+	margin: 1.143em 0 0.286em;
+}
+
+h4 {
+	font-size: 1.8em;
+	line-height: 1.3;
+	margin: 1.333em 0 0.333em;
+}
+
+h5 {
+	font-size: 1.6em;
+	margin-top: 1.5em 0 0.375em;
+}
+
+h4,
+h5 {
+	letter-spacing: 0.1em;
+}
+
+h1 + h2,
+h1 + h3,
+h1 + h4,
+h1 + h5,
+h1 + h6,
+h2 + h3,
+h2 + h4,
+h2 + h5,
+h2 + h6,
+h3 + h4,
+h3 + h5,
+h3 + h6,
+h4 + h5,
+h4 + h5,
+h5 + h6 {
+	margin-top: 0;
+}
+
+pre,
+code {
+	font-family: consolas, 'deja vu sans mono', 'lucida sans typewriter', monaco, monospace;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	color: #0000bb;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #330077;
+}
+
+a.new {
+	color: #cc0000;
+}
+
+/* Header */
+#header-wrap {
+	/* @embed */
+	background-image: url(images/stripes.png);
+	background-color: #333333;
+	background-repeat: repeat;
+	padding: 1em 0;
+}
+
+#header h1,
+#header h1 a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 36px;
+	line-height: 1;
+	margin: 0;
+}
+
+#siteSubtitle {
+	font-size: 1.4em;
+	color: #ffffff;
+}
+
+/* Menu */
+#menu {
+	margin: 2.4em 0 -1em;
+	overflow: hidden;
+	padding: 1.2em 6em;
+	border-top: 1px solid #666666;
+	background: #333333;
+	background: rgba(50, 50, 50, 0.7);
+}
+
+#menu a {
+	font-family: corbel, 'gill sans', 'gill sans mt', sans-serif;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+#menu li {
+	display: block;
+	float: left;
+	margin-right: 2em;
+	font-size: 1.6em;
+}
+
+/* Footer */
+#footer-wrap {
+	font-family: corbel, 'gill sans', 'gill sans mt', sans-serif;
+	background: #333333;
+	clear: both;
+	color: #ffffff;
+	padding: 2.4em 0 4em;
+}
+
+.footer {
+	min-width: 24em;
+	width: 25%;
+	float: left;
+	margin-left: 6em;
+}
+
+.footer .widget li {
+	font-size: 1.4em;
+}
+
+.footer h3 {
+	border-bottom: 1px solid #666666;
+	font-size: 2.1em;
+	text-transform: uppercase;
+}
+
+.footer a,
+.footer a.new {
+	color: #ffffff;
+	text-decoration: none;
+	border-bottom: 1px solid #999999;
+}
+
+.footer a:hover,
+.footer a.new:hover {
+	border-color: #cccccc;
+}
+
+.footer li > a,
+.footer li > a.new {
+	border-color: #444444;
+}
+
+/* Footer to content (for FooterLinks) */
+#footer {
+	text-align: right;
+	padding: 2ex 0;
+}
+
+/* Content */
+#content-container {
+	position: relative;
+	margin: 0;
+	min-height: 21.6em;
+	clear: both;
+	overflow: hidden;
+}
+
+hr {
+	/* @embed */
+	background: url(images/hr.png) center no-repeat;
+	height: 24px;
+	margin: 0 0 10px;
+	display: block;
+	border-width: 0px;
+	border-style: none !important;
+}
+
+.entry-title {
+	color: #555555;
+	margin: 0 0 0.5em;
+	line-height: 1.5;
+}
+
+.entry-content p,
+.entry-content li,
+.entry-content dt,
+.entry-content dd,
+.entry-content center {
+	font-size: 1.6em;
+	margin-bottom: 0.75em;
+}
+
+.entry-content li li {
+	font-size: 1em;
+}
+
+.entry-content table {
+	margin: 1em 0;
+}
+
+.entry-content td,
+.entry-content th {
+	padding: 0.125em 0.5em;
+	text-align: left;
+}
+
+.entry-content pre {
+	font-size: 1.4em;
+}
+
+.entry-content legend {
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.entry-content blockquote {
+	font-size: 1.6em;
+	padding-left: 3em;
+}
+
+.entry-content ul li {
+	list-style: disc outside;
+}
+
+.entry-content ol li {
+	list-style: decimal outside;
+}
+
+.entry-content li ol,
+.entry-content li ul {
+	margin: 0.5em 0 0 0.5em;
+}
+
+.center {
+	width: 100%;
+	text-align: center;
+}
+
+.center * {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* stop "larger" from .warning multiplying with "1.6em" from p */
+.warning p {
+	font-size: 100%;
+}
+
+/* Main Links */
+.entry-content a {
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.entry-content a:hover {
+	border-color: #555555;
+	text-decoration: none;
+}
+
+/* Meta (edit links etc.) */
+.entry-meta {
+	float: right;
+	padding-left: 15px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+	border-left: 1px solid #aaaaaa;
+}
+
+.entry-meta span {
+	display: block;
+	font-size: 1.1em;
+	font-style: italic;
+	padding: 0.4em 0;
+}
+
+.entry-meta .meta-sep {
+	display: none;
+}
+
+#content .printfooter {
+	display: none;
+}
+
+span.editsection {
+	font-size: 10pt;
+}
+
+.toc,
+#toc {
+	display: none;
+}
+
+#bodyContent > ul > li {
+	margin-left: 10pt;
+}
+
+div.entry-content li {
+	margin-left: 30px;
+}
+
+span.entry-sub-title {
+	margin-left: 40px;
+	font-size: 10pt;
+	font-style: italic;
+}
+
+/* References */
+.reference {
+	font-size: 8pt;
+}
+
+ol.references > li:target {
+	background-color: #ddeeff;
+}
+
+sup.reference:target {
+	background-color: #ddeeff;
+}
+
+/* Images */
+.entry-content img {
+	padding: 4px;
+	margin-bottom: 6px;
+}
+
+.entry-content .gallery a {
+	border-width: 0;
+}
+
+div.floatright,
+table.floatright {
+	clear: right;
+	float: right;
+	position: relative;
+	margin: 0 0 0.5em 0.5em;
+	border: 0;
+}
+
+div.floatright p {
+	font-style: italic;
+}
+
+div.floatleft,
+table.floatleft {
+	float: left;
+	clear: left;
+	position: relative;
+	margin: 0 0.5em 0.5em 0;
+	border: 0;
+}
+
+div.floatleft p {
+	font-style: italic;
+}
+
+div.thumb {
+	margin-bottom: 0.5em;
+	width: auto;
+}
+
+div.thumbinner {
+	border: 1px solid #cccccc;
+	padding: 3px !important;
+	background-color: #f9f9f9;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	text-align: center;
+	overflow: hidden;
+}
+
+img.thumbimage {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.thumbinner>a {
+	border: none;
+}
+
+.thumbcaption {
+	border: none;
+	text-align: left;
+	padding: 3px !important;
+}
+
+div.magnify {
+	float: right;
+	border: none !important;
+	background: none !important;
+}
+
+div.magnify a,
+div.magnify img {
+	display: block;
+	border: none !important;
+	background: none !important;
+}
+
+div.tright {
+	clear: right;
+	float: right;
+	margin-left: 1.4em;
+}
+
+div.tleft {
+	float: left;
+	clear: left;
+	margin-right: 1.4em;
+}
+
+img.thumbborder {
+	border: 1px solid #aaaaaa;
+}
+
+.hiddenStructure {
+	display: none;
+}
+
+table.gallery {
+	background-color: #fafafa;
+}
+
+table.gallery td {
+	background-color: #fafafa;
+	border: 2px solid #fafafa;
+}
+
+/* Category pages */
+div.entry-content div#mw-pages table tbody tr td h3 {
+	font-size: 15pt;
+}
+
+div.entry-content div#mw-subcategories table tbody tr td h3 {
+	font-size: 15pt;
+}
+
+div#content-container div.entry-content div#mw-pages table tbody tr td ul {
+	font-size: 6pt;
+}
+
+div#content-container div.entry-content div#mw-subcategories table tbody tr td ul {
+	font-size: 6pt;
+}
+
+
+div.mw-spcontent form {
+	margin-bottom: 10pt;
+}
+
+/* Protect pages */
+form#mw-Protect-Form fieldset table {
+	font-size: 8pt;
+}
+
+/* Special Pages */
+table.mw-specialpages-table tbody tr td ul {
+	font-size: 6pt;
+}
+
+/* Category Links */
+#catlinks {
+	clear: both;
+	background: #666666;
+	height: 100%;
+	overflow: hidden;
+}
+
+#catlinks a {
+	color: #ffffff;
+	padding: 0 1em;
+	line-height: 2;
+	height: 100%;
+	font-size: 1.2em;
+	display: inline;
+}
+
+.catlinks li:first-child {
+	border-left: 1px solid #aaaaaa;
+}
+
+.catlinks li {
+	margin: 0em 0.25em;
+}
+
+/* Messages */
+.message {
+	margin: 0 auto;
+	position: relative;
+	min-width: 960px;
+	width: 90%;
+	color: #ffffff;
+	background-color: #666666;
+	font-size: 13pt;
+	line-height: 36pt;
+}
+
+.message a:link,
+.message a:visited {
+	color: #dfdfdf;
+}
+
+#mw-js-message {
+	display: none;
+}
+
+.mw-search-formheader div.search-types ul li {
+	float: left;
+	margin-left: 20px;
+}
+
+div.searchresult {
+	margin-top: 15px;
+}
+
+.mw-jump {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	z-index: 1;
+	color: #ffffff;
+	font-size: 1.25em;
+}
+.mw-jump a {
+	color: #ffffff;
+}
+
+img#logo {
+	display: block;
+	margin: 24px auto 0px;
+}
+
+div#bodyContent {
+	padding-bottom: 20px;
+}
+
+/* don't give lists massive margins when in tds */
+.mw-content-ltr ul,
+.mw-content-rtl ul {
+	margin-left: 0em;
+}
+
+/* reduce h3 top margin in a table, so can be used as a table title */
+table h3 {
+	margin-top: 1ex;
+}
+
+/* ensure edit form doesn't clear the right floated meta
+ * (.action-edit is selected so that preview content is cleared) */
+body.action-edit #editform,
+body.action-edit #toolbar,
+body.action-edit #wpTextbox1 {
+	clear: none;
+}

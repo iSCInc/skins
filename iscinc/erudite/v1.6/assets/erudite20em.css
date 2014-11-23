@@ -1,0 +1,4 @@
+/* Disable text justification (user preference) */
+#article, #bodyContent, #mw_content {
+	text-align: left !important;
+}
