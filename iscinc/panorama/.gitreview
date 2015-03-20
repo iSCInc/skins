@@ -1,0 +1,6 @@
+[gitblit]
+host=git.inc.isc/gitblit
+port=8081
+project=mw-skins/panorama.git
+defaultbranch=dev
+defaultrebase=0
