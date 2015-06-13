@@ -47,18 +47,10 @@ $wgMessagesDirs['SkinPanorama'] = __DIR__ . '/i18n';
 // Main CSS ResourceLoader module
 $wgResourceModules['skins.panorama'] = array(
 	'styles' => array(
-		// MonoBook also loads these
-		#'skins/common/commonElements.css' => array( 'media' => 'screen' ),
-		#'skins/common/commonContent.css' => array( 'media' => 'screen' ),
-		'skins/common/commonInterface.css' => array( 'media' => 'screen' ),
-		// Styles custom to this skin
-		'skins/panorama/resources/css/nonarticle.css' => array( 'media' => 'screen' ),
-		'skins/panorama/resources/css/searchresults.css' => array( 'media' => 'screen' ),
-		'skins/panorama/resources/css/special.css' => array( 'media' => 'screen' ),
-		'skins/panorama/resources/css/printable.css' => array( 'media' => 'print' ),
-		#'skins/panorama/resources/css/iphone.css' => array( 'media' => 'only screen and (max-device-width: 480px)' ),
+		'panorama/resources/screen.css' => array( 'media' => 'screen' ),
 	),
-	'position' => 'top'
+	'remoteBasePath' => &$GLOBALS['wgStylePath'],
+	'localBasePath' => &$GLOBALS['wgStyleDirectory'],
 );
 
 // zzz prefix is a hack to ensure that this module is loaded after the main
