@@ -7,9 +7,9 @@
  * @ingroup Skins
  * @version v1.0 (2015-02-18)
  * @author iSC Inc. team
- * @author Suriyaa Sundararuban <suriyaa@inc.isc>
+ * @author Suriyaa Sundararuban <suriyaa@inc.isc>  (http://www.mediawiki.org/wiki/User:Suriyaa_Kudo)
  * @date 22 February 2015
- * @license MIT License
+ * @license WOCPL-01+ License (https://gist.github.com/SuriyaaKudoIsc/d93e8f709e911805da92)
  *
  * To install place the panorama folder (the folder containing this file!) into
  * skins/ and add this line to your wiki's LocalSettings.php:
@@ -17,20 +17,19 @@
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This is not a valid entry point to MediaWiki.' );
+	die( 'This is an extension to the MediaWiki package and cannot be run standalone.' );
 }
 
 // Skin credits that will show up on Special:Version
 $wgExtensionCredits['skin'][] = array(
 	'path' => __FILE__,
-	'name' => 'panorama',
+	'name' => 'panorama', // name as shown under [[Special:Version]]
+	'namemsg' => 'skinname-panorama', // used since MW 1.24, see the section on "Localisation messages" below
 	'version' => '1.0',
-	'author' => array( 'iSC Inc.', 'Suriyaa Kudo' ),
-	// @todo To be moved into the i18n file eventually once i18n is stable enough.
-	// No need to cause translators unnecessary extra work before I finalize
-	// the description. (Suggestions for a better desc? Let me know!)
-	'description' => 'A iSC Inc. redesigned skin.',
-	'url' => 'https://inc.isc/skins/Panorama',
+	'url' => 'https://skins.inc.isc/panorama',
+	'author' => array( '[https://inc.isc iSC Inc.]', '[https://mediawiki.org/wiki/User:Suriyaa_Kudo Suriyaa Sundararuban]' ),
+	'descriptionmsg' => 'panorama-desc', // see the section on "Localisation messages" below
+	'license' => 'WOCPL-01+',
 );
 
 // The first instance must be strtolower()ed so that useskin=panorama works and
