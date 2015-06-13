@@ -3,5 +3,19 @@
 		"authors": [ "Suriyaa Sundararuban" ]
 	},
 	"skinname-panorama": "Panorama",
-	"panorama-desc": "Desription text here."
+	"panorama-skin-desc": "Desription text here."
+	"panorama.css": "/* CSS placed here will affect users of the panorama skin */",
+	"panorama.js": "/* Any JavaScript here will be loaded for users using the panorama skin */",
+	"panorama-action-addsection": "Add topic",
+	"panorama-action-delete": "Delete",
+	"panorama-action-move": "Move",
+	"panorama-action-protect": "Protect",
+	"panorama-action-undelete": "Undelete",
+	"panorama-action-unprotect": "Change protection",
+	"panorama-view-create": "Create",
+	"panorama-view-edit": "Edit",
+	"panorama-view-history": "View history",
+	"panorama-view-view": "Read",
+	"panorama-view-viewsource": "View source",
+	"panorama-more-actions": "More"
 }
