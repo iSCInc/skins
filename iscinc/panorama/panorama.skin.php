@@ -203,7 +203,7 @@ foreach ( $this->getSidebar() as $boxName => $box ) { ?>
   <button type="submit" class="btn btn-default"><i class="fa fa-binoculars"></i></button>
 </form>
 
-<!--start of search, its almost good, however ready for a redo....--
+<!--start of search, its almost good, however ready for a redo....-->
 <form class="navbar-form navbar-right" role="search" action="<?php $this->text( 'wgScript' ); ?>">
 	<input type="hidden" name="title" value="<?php $this->text( 'searchtitle' ) ?>" />
 <?php echo $this->makeSearchInput( array( 'id' => 'searchInput' ) ); ?>
