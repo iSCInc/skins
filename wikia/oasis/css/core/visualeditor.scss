@@ -2,7 +2,6 @@
 // VisualEditor takes care of loading everything it needs.
 @import "skins/shared/color";
 @import "skins/shared/mixins/blackout";
-@import "skins/shared/mixins/box-sizing";
 @import "skins/shared/mixins/flexbox";
 
 .ve-spinner {
@@ -12,16 +11,16 @@
 	@include justify-content( center );
 	opacity: 0;
 
-	&.optimizely-opaque {
-		@include blackout( transparentize( $color-page, 0.15 ) );
+	&.visible {
+		z-index: $zTop + 1;
 	}
 
 	.content {
 		@include box-shadow( 1px, 2px, 5px, rgba(0, 0, 0, .7) );
-		@include box-sizing( border-box );
 		@include flexbox();
 		@include flex-direction( column );
 		background-color: $color-page;
+		box-sizing: border-box;
 		border: 1px solid $color-page-border;
 		color: $color-text;
 		padding: 20px;
@@ -29,7 +28,7 @@
 	}
 
 	.loading {
-		background: url(/skins/common/images/ajax.gif) no-repeat scroll center $color-page; /* $wgCdnStylePath */
+		background: url(/skins/common/images/ajax.gif) no-repeat scroll center $color-page; /* $wgResourceBasePath */
 		height: 16px;
 		margin: 0 auto;
 		opacity: .75;

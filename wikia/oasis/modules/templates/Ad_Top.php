@@ -2,10 +2,8 @@
 
 	<div class="WikiaTopAdsInner">
 
-
 		<?= $app->renderView('Ad', 'Index', [
-			'slotName' => $leaderboardName,
-			'pageFairId' => isset($wg->AnalyticsProviderPageFairSlotIds['LEADERBOARD']) ? $wg->AnalyticsProviderPageFairSlotIds['LEADERBOARD'] : null,
+			'slotName' => 'TOP_LEADERBOARD',
 			'pageTypes' => ['homepage_logged', 'corporate', 'search', 'all_ads']
 		]); ?>
 
@@ -15,4 +13,16 @@
 
 	<?= $app->renderView('Ad', 'Index', ['slotName' => 'INVISIBLE_SKIN', 'pageTypes' => ['homepage_logged', 'corporate', 'search', 'all_ads']]); ?>
 
+</div>
+
+<div id="InvisibleHighImpactWrapper" class="hidden">
+	<div class="background"></div>
+
+	<div class="top-bar">
+		<div class="label"><?= ucfirst(wfMessage( 'adengine-advertisement' )->escaped()) ?></div>
+		<a class="close">
+			<div class="close-button"></div>
+		</a>
+	</div>
+	<div id="INVISIBLE_HIGH_IMPACT_2" class="wikia-ad noprint"></div>
 </div>

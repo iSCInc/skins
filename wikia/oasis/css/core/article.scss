@@ -5,6 +5,8 @@
 @import 'skins/shared/mixins/gradient';
 @import 'skins/shared/mixins/infobox';
 
+@import 'skins/shared/styles/infoboxes';
+
 .WikiaArticle {
 	@extend %bodytext;
 	// Prevent content from escaping the article area
@@ -40,6 +42,7 @@
 
 	h3 {
 		font-size: 16px;
+		overflow: hidden;
 	}
 
 	h4 {
@@ -102,6 +105,15 @@
 
 	ol {
 		list-style: decimal;
+
+		// VOLDEV-30
+		// Indent list on special pages so the first number isn't cut off
+		// this only applies reliably to 4 digit lists
+		// which covers lists limited to 1000 and unlimited lists up to 9999
+		// but it's unlikely someone gets to 10,000+ so hopefully this will do
+		&.special {
+			margin-left: 3.2em;
+		}
 	}
 
 	ul {
@@ -109,6 +121,7 @@
 	}
 
 	li {
+		//@TODO should be removed when CONCF-186 released to production
 		line-height: 20px;
 		margin: 3px 0;
 	}
@@ -273,7 +286,7 @@
 	// FIXME: anyone still using gopher?
 	a.external, a[href^='gopher://'] {
 		&:after {
-			background-image: url('/skins/oasis/images/sprite.png');	/* $wgCdnStylePath */
+			background-image: url('/skins/shared/images/sprite.png');	/* $wgResourceBasePath */
 			background-position: -1198px 0;
 			background-repeat: no-repeat;
 			content: '';
@@ -321,7 +334,7 @@
 		}
 	}
 
-	// highlight selected reference (ported from Vector skin)
+	// highlight selected reference
 	.references > li:target {
 		background-color: mix($color-page, $color-links, 85%);
 	}
@@ -349,23 +362,29 @@
 		padding: 0 1em 1em;
 
 		legend {
+			cursor: pointer;
 			padding: 7px;
 		}
-	}
 
-	.infobox {
-		background-color: mix($color-page, #000, 95%);
-		border: 1px solid $color-page-border;
-		clear: right;
-		color: $color-text;
-		float: right;
-		margin-bottom: .5em;
-		margin-left: 1em;
-		padding: .2em;
+		&.collapsible {
+			height: auto;
 
-		&[width='100%'] {	/* fb:8918 - 100% width support */
-			float: none;
-			margin-left: 0;
+			legend::before {
+				content: "\25b4\00a0";
+			}
+
+			&.collapsed {
+				height: 25px;
+				overflow: hidden;
+
+				.rc-fieldset-content {
+					visibility: hidden;
+				}
+
+				legend::before {
+					content: "\25be\00a0";
+				}
+			}
 		}
 	}
 
@@ -391,26 +410,9 @@
 	}
 
 	//diff page
-	td.diff-context {
-		background-color: $color-diff-context;
-	}
-
-	td.diff-deletedline,
-	td.diff-addedline {
-		color: #000;
-	}
-
-	table.diff, td.diff-otitle, td.diff-ntitle {
-		background-color: $color-page;
-	}
-
-  	// BugId:9262
-	.diff-article-content {
-		margin-right: 340px;
-
-		body.mainpage & {
-			margin-right: 0;
-		}
+	// BugId:9262
+	.diff-article-content body.mainpage & {
+		margin-right: 0;
 	}
 
 	.fbconnect-synced-profile {
@@ -546,8 +548,8 @@
 .WikiaArticle {
 	#{$infoboxes} {
 		.article-thumb, .article-thumb.tright, .article-thumb.tleft {
-			margin: 0 auto;
 			float: none;
+			margin: 0 auto;
 		}
 	}
 }
@@ -570,7 +572,7 @@
 		li {
 			border-left: 1px solid $color-page-border;
 			display: inline-block;
-			line-height: 15px;
+			line-height: 24px;
 			margin-bottom: 6px;
 			padding-left: 5px;
 			padding-right: 5px;
@@ -583,13 +585,9 @@
 	}
 }
 
-.TOC_hide #toctitle + ul {
-	display: none;
-}
-
 // Needed for article comments lazy loading
 .WikiaArticleComments.loading {
-	background: url('/skins/common/images/ajax.gif') no-repeat 50% 50%; /* $wgCdnStylePath */
+	background: url('/skins/common/images/ajax.gif') no-repeat 50% 50%; /* $wgResourceBasePath */
 	border-top: 1px solid $color-page;
 	height: 16px;
 	margin: 10px;

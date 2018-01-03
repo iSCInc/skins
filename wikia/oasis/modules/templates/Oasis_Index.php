@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="<?= $lang ?>" dir="<?= $dir ?>">
+<html lang="<?= $lang ?>" dir="<?= $dir ?>" class="<?= implode(' ', array_map( 'Sanitizer::escapeClass', $htmlClasses )) ?>">
 <head>
 
 <meta http-equiv="Content-Type" content="<?= $mimeType ?>; charset=<?= $charset ?>">
-<?php if ( BodyController::isResponsiveLayoutEnabled() ) : ?>
+<?php if ( BodyController::isResponsiveLayoutEnabled() || BodyController::isOasisBreakpoints() ) : ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <?php else : ?>
 	<meta name="viewport" content="width=1200">
@@ -35,6 +35,7 @@
 
 <?= $topScripts ?>
 <?= $globalBlockingScripts; /*needed for jsLoader and for the async loading of CSS files.*/ ?>
+<?= $recoveryHeadBootstrapCode ?>
 
 <!-- Make IE recognize HTML5 tags. -->
 <!--[if IE]>
@@ -54,36 +55,33 @@
 	<?= $jsFiles ?>
 <? endif ?>
 
-<? if ( $displayAdminDashboard ): ?>
-	<!--[if IE]><script src="<?= $wg->ResourceBasePath ?>/resources/wikia/libraries/excanvas/excanvas.js"></script><![endif]-->
-<? endif ?>
-
 <?= $headItems ?>
 
 </head>
-<body class="<?= implode(' ', $bodyClasses) ?>"<?= $itemType ?>>
-<? if ( BodyController::isResponsiveLayoutEnabled() ): ?>
+<body class="<?= implode(' ', $bodyClasses) ?>" <?= $itemType ?>>
+<?= $instartLogic ?>
+<?= $recoveryTopBodyBootstrapCode ?>
+<? if ( BodyController::isResponsiveLayoutEnabled() || BodyController::isOasisBreakpoints() ): ?>
 	<div class="background-image-gradient"></div>
 <? endif ?>
 
 <?= $comScore ?>
 <?= $quantServe ?>
-<?= $googleAnalytics ?>
-<?= $amazonDirectTargetedBuy ?>
+<?= $a9 ?>
+<?= $prebid ?>
+<?= $krux ?>
+<?= $netzathleten ?>
 <?= $dynamicYield ?>
-<?= $ivw2 ?>
+<?= $sourcePoint ?>
+<?= $gfc ?>
+
 <div class="WikiaSiteWrapper">
 	<?= $body ?>
 
 	<?php
 		echo F::app()->renderView('Ad', 'Index', ['slotName' => 'GPT_FLUSH', 'pageTypes' => ['*']]);
-		if (empty($wg->SuppressAds)) {
-			echo F::app()->renderView('Ad', 'Index', ['slotName' => 'INVISIBLE_1', 'pageTypes' => ['corporate', 'all_ads']]);
-			if (!$wg->EnableWikiaHomePageExt) {
-				echo F::app()->renderView('Ad', 'Index', ['slotName' => 'INVISIBLE_2']);
-			}
-		}
-		echo F::app()->renderView('Ad', 'Index', ['slotName' => 'SEVENONEMEDIA_FLUSH', 'pageTypes' => ['*']]);
+		echo F::app()->renderView('Ad', 'Index', ['slotName' => 'EVOLVE_FLUSH', 'pageTypes' => ['*']]);
+		echo F::app()->renderView('Ad', 'Index', ['slotName' => 'TURTLE_FLUSH', 'pageTypes' => ['*']]);
 	?>
 </div>
 <? if( $jsAtBottom ): ?>
@@ -100,12 +98,11 @@
 <? endif ?>
 
 <script type="text/javascript">/*<![CDATA[*/ Wikia.LazyQueue.makeQueue(wgAfterContentAndJS, function(fn) {fn();}); wgAfterContentAndJS.start(); /*]]>*/</script>
-<?php if ($wg->EnableAdEngineExt) { ?>
 <script type="text/javascript">/*<![CDATA[*/ if (typeof AdEngine_trackPageInteractive === 'function') {wgAfterContentAndJS.push(AdEngine_trackPageInteractive);} /*]]>*/</script>
-<?php } ?>
 <?= $bottomScripts ?>
-<?= $cssPrintLinks ?>
 
+<?= $nielsen ?>
+<?= $recoveryBottomBodyBootstrapCode ?>
 </body>
 
 <?= wfReportTime() . "\n" ?>

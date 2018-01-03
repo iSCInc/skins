@@ -5,7 +5,7 @@
  * @author Maciej Brencz
  */
 
-class MenuButtonController extends WikiaController {
+class MenuButtonController extends WikiaService {
 
 	const ADD_ICON = 1;
 	const EDIT_ICON = 2;
@@ -136,7 +136,7 @@ class MenuButtonController extends WikiaController {
 		if ( $this->actionName == 'edit' &&
 			isset($data['action']['href']) /* BugId:12613 */ &&
 			!$wgTitle->userCan( 'edit' ) &&
-			!$wgUser->isBlocked() /* CE-18 */ &&
+			!$wgUser->isBlocked( true, false ) /* CE-18 */ &&
 			!$wgUser->isLoggedIn() /* VOLDEV-74 */
 		) {
 			$signUpTitle = SpecialPage::getTitleFor('SignUp');
@@ -168,7 +168,7 @@ class MenuButtonController extends WikiaController {
 	/**
 	 * @param extraReturntoquery is a string which will be urlencoded and appended to the returntoquery. eg: "action=edit".
 	 */
-	public function createLoginURL($extraReturntoquery='') {
+	private function createLoginURL( $extraReturntoquery = '' ) {
 		global $wgTitle;
 
 		/** create login URL **/

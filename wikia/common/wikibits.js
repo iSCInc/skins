@@ -65,6 +65,20 @@ window.addOnloadHook = function( hookFunct ) {
 	}
 };
 
+window.forceReviewedContent = function( url ) {
+	if ( mw.config.get('wgContentReviewExtEnabled') ) {
+		if (url.search(/mediawiki:/i) != -1) {
+			if ( mw.config.get('wgContentReviewTestModeEnabled') ) {
+				url += '&current=' + mw.config.get('wgScriptsTimestamp');
+			} else {
+				url += '&reviewed=' + mw.config.get('wgReviewedScriptsTimestamp');
+			}
+		}
+	}
+
+	return url;
+};
+
 window.importScript = function( page ) {
 	var uri = mw.config.get( 'wgScript' ) + '?title=' +
 		mw.util.wikiUrlencode( page ) +
@@ -74,6 +88,8 @@ window.importScript = function( page ) {
 
 window.loadedScripts = {}; // included-scripts tracker
 window.importScriptURI = function( url ) {
+	url = forceReviewedContent( url );
+
 	if ( loadedScripts[url] ) {
 		return null;
 	}
@@ -211,8 +227,7 @@ window.updateTooltipAccessKeys = function( nodeList ) {
 		// containers which contain the relevant links. This is really just an
 		// optimization technique.
 		var linkContainers = [
-			'column-one', // Monobook and Modern
-			'mw-head', 'mw-panel', 'p-logo' // Vector
+			'column-one', 'p-logo', // Monobook and Modern
 		];
 		for ( var i in linkContainers ) {
 			var linkContainer = document.getElementById( linkContainers[i] );
@@ -514,6 +529,12 @@ window.redirectToFragment = function( fragment ) {
 				if ( window.location.hash == fragment ) {
 					window.location.hash = fragment;
 				}
+
+				// Firefox also has a strange bug where it doesn't show the proper
+				// favicon when redirecting to sections because of the code above.
+				// Refreshing the link tag is enough to fix it surprisingly...
+				// @see https://wikia-inc.atlassian.net/browse/SEO-115
+				$( 'head' ).append( $( 'link[rel="shortcut icon"]' ) );
 			});
 		}
 	}
@@ -699,7 +720,7 @@ if (skin != 'monaco' && skin != 'oasis') {
 window.importScriptPage = function( page, server ) {
 	var url = '/index.php?title=' + encodeURIComponent(page.replace(/ /g,'_')).replace('%2F','/').replace('%3A',':') + '&action=raw&ctype=text/javascript';
 	if( typeof server == "string" ) {
-		if( server.indexOf( '://' ) == -1 ) url = 'http://' + server + '.wikia.com' + url;
+		if( server.indexOf( '://' ) == -1  && server.substring( 0, 2 ) !== '//' ) url = 'http://' + server + '.wikia.com' + url;
 		else url = server + url;
 	}
 	return importScriptURI(url);
@@ -708,7 +729,7 @@ window.importScriptPage = function( page, server ) {
 window.importStylesheetPage= function( page, server ) {
 	var url = '/index.php?title=' + encodeURIComponent(page.replace(/ /g,'_')).replace('%2F','/').replace('%3A',':') + '&action=raw&ctype=text/css';
 	if( typeof server == "string" ) {
-		if( server.indexOf( '://' ) == -1 ) url = 'http://' + server + '.wikia.com' + url;
+		if( server.indexOf( '://' ) == -1 && server.substring( 0, 2 ) !== '//' ) url = 'http://' + server + '.wikia.com' + url;
 		else url = server + url;
 	}
 	return importStylesheetURI(url);
