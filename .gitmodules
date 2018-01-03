@@ -1,0 +1,3 @@
+[submodule "wikimedia"]
+	path = wikimedia
+	url = https://github.com/wikimedia/mediawiki-skins.git
